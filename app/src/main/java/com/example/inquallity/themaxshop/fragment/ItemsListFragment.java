@@ -48,14 +48,12 @@ public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCa
         mRecyclerView.setLayoutManager(mLayoutManager);
         mItemsListAdapter.setOnCardClickListener(this);
         mRecyclerView.setAdapter(mItemsListAdapter);
-
     }
 
     @Override
     public void onCardClick(View view, String title, int imgRes) {
 
         Fragment fragment = new ItemFragment();
-
         Bundle bundle = new Bundle();
         bundle.putString("KEY_TITLE", title);
         bundle.putInt("KEY_IMG_RES", imgRes);
@@ -63,6 +61,7 @@ public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCa
         getFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fl_items_list_content, fragment)
+                .addToBackStack(fragment.getClass().getName())
                 .commit();
     }
 
@@ -98,8 +97,6 @@ public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCa
     }
 
     private void initializeClassicFlowerList() {
-        mItemList.add(new Item("Астра", "123", R.drawable.aster));
-        mItemList.add(new Item("Календула", "137", R.drawable.calendula));
         mItemList.add(new Item("Хризантема", "137", R.drawable.chrysanthemum));
         mItemList.add(new Item("Незабудка", "200", R.drawable.forget_me_not));
         mItemList.add(new Item("Гербера", "200", R.drawable.gerbera));
@@ -110,6 +107,7 @@ public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCa
         mItemList.add(new Item("Ландыш", "200", R.drawable.may_lily));
         mItemList.add(new Item("Нарцисс", "200", R.drawable.narcissus));
         mItemList.add(new Item("Орхидея", "200", R.drawable.orchid));
+        mItemList.add(new Item("Астра", "123", R.drawable.aster));
         mItemList.add(new Item("Пион", "200", R.drawable.peony));
         mItemList.add(new Item("Роза", "200", R.drawable.rose));
         mItemList.add(new Item("Подсолнух", "200", R.drawable.sunflower));
@@ -117,7 +115,6 @@ public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCa
     }
 
     private void initializeOriginFlowerList() {
-        mItemList.add(new Item("Альстроемерия", "137", R.drawable.alstroemeria));
         mItemList.add(new Item("Амарилис", "123", R.drawable.amaryllis));
         mItemList.add(new Item("Антуриум", "200", R.drawable.anthurium));
         mItemList.add(new Item("Антирринум", "123", R.drawable.antirrinum));
@@ -134,7 +131,6 @@ public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCa
         mItemList.add(new Item("Гидра", "200", R.drawable.hydrangea));
         mItemList.add(new Item("Латур", "200", R.drawable.latyrus));
         mItemList.add(new Item("Лузиан", "200", R.drawable.lysianthus));
-        mItemList.add(new Item("матри", "200", R.drawable.matricaria));
         mItemList.add(new Item("Мускари", "200", R.drawable.muscari));
         mItemList.add(new Item("Тумерик", "200", R.drawable.turmeric));
     }
@@ -186,53 +182,46 @@ public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCa
     }
 
     private void initializeHousePlantList() {
-        mItemList.add(new Item("Амарилис", "123", R.drawable.hp_amaryllis));
+        mItemList.add(new Item("Амариллис", "123", R.drawable.hp_amaryllis));
         mItemList.add(new Item("Антуриум", "137", R.drawable.hp_anthurium));
-        mItemList.add(new Item("пл1", "200", R.drawable.hp_araucaria));
-        mItemList.add(new Item("пл2", "123", R.drawable.hp_asplenium));
+        mItemList.add(new Item("Араукария", "200", R.drawable.hp_araucaria));
+        mItemList.add(new Item("Асплениум", "123", R.drawable.hp_asplenium));
         mItemList.add(new Item("Азалия", "137", R.drawable.hp_azalea));
         mItemList.add(new Item("Бегония", "200", R.drawable.hp_begonia));
-        mItemList.add(new Item("пл3", "123", R.drawable.hp_calamondin));
-        mItemList.add(new Item("пл4", "137", R.drawable.hp_calathea));
+        mItemList.add(new Item("Каламондин", "123", R.drawable.hp_calamondin));
+        mItemList.add(new Item("Калатея", "137", R.drawable.hp_calathea));
         mItemList.add(new Item("Лимон", "200", R.drawable.hp_citrus));
-        mItemList.add(new Item("пл5", "123", R.drawable.hp_clivia));
-        mItemList.add(new Item("пл6", "137", R.drawable.hp_codiaeum));
-        mItemList.add(new Item("пл7", "200", R.drawable.hp_crassula));
-        mItemList.add(new Item("пл8", "123", R.drawable.hp_cynara));
-        mItemList.add(new Item("пл9", "137", R.drawable.hp_dendrobium_nobile));
-        mItemList.add(new Item("пл10", "200", R.drawable.hp_dieffenbachia));
-        mItemList.add(new Item("пл11", "123", R.drawable.hp_dipladenia));
-        mItemList.add(new Item("пл12", "137", R.drawable.hp_dracaena_song_of_jamaica));
+        mItemList.add(new Item("Кливия", "123", R.drawable.hp_clivia));
+        mItemList.add(new Item("Кодиеум", "137", R.drawable.hp_codiaeum));
+        mItemList.add(new Item("Крассула", "200", R.drawable.hp_crassula));
+        mItemList.add(new Item("Артишок", "123", R.drawable.hp_cynara));
+        mItemList.add(new Item("Орхидея Дендробиум ", "137", R.drawable.hp_dendrobium_nobile));
+        mItemList.add(new Item("Дипладения", "123", R.drawable.hp_dipladenia));
         mItemList.add(new Item("Гибискус", "200", R.drawable.hp_hibiscus));
-        mItemList.add(new Item("пл13", "200", R.drawable.hp_kalanchoe));
-        mItemList.add(new Item("пл14", "200", R.drawable.hp_mandevilla));
-        mItemList.add(new Item("Микс", "200", R.drawable.hp_mix));
+        mItemList.add(new Item("Каланхоэ", "200", R.drawable.hp_kalanchoe));
         mItemList.add(new Item("Нарцисс", "200", R.drawable.hp_narcissus));
-        mItemList.add(new Item("пл15", "200", R.drawable.hp_nertera));
-        mItemList.add(new Item("пл16", "200", R.drawable.hp_oncidium));
-        mItemList.add(new Item("пл17", "200", R.drawable.hp_zamioculcas));
+        mItemList.add(new Item("Нертера", "200", R.drawable.hp_nertera));
+        mItemList.add(new Item("Орхидея Онцидиум", "200", R.drawable.hp_oncidium));
     }
 
     private void initializeOpenSoilPlantList() {
-        mItemList.add(new Item("amarylis", "123", R.drawable.os_calibrochia));
-        mItemList.add(new Item("alstroemeria", "137", R.drawable.os_campanula));
-        mItemList.add(new Item("Хризантемма", "200", R.drawable.os_chrysanthemum));
-        mItemList.add(new Item("amarylis", "123", R.drawable.os_cornus_florida));
-        mItemList.add(new Item("alstroemeria", "137", R.drawable.os_cupressus_goldcrest));
-        mItemList.add(new Item("aquilegia", "200", R.drawable.os_gaillardia));
-        mItemList.add(new Item("amarylis", "123", R.drawable.os_heather));
-        mItemList.add(new Item("alstroemeria", "137", R.drawable.os_hydrangea));
+        mItemList.add(new Item("Калиброхия", "123", R.drawable.os_calibrochia));
+        mItemList.add(new Item("Кампанула", "137", R.drawable.os_campanula));
+        mItemList.add(new Item("Хризантема", "200", R.drawable.os_chrysanthemum));
+        mItemList.add(new Item("Кизил цветущий", "123", R.drawable.os_cornus_florida));
+        mItemList.add(new Item("Купрессус Голдкрест", "137", R.drawable.os_cupressus_goldcrest));
+        mItemList.add(new Item("Гайлардия", "200", R.drawable.os_gaillardia));
+        mItemList.add(new Item("Вереск", "123", R.drawable.os_heather));
+        mItemList.add(new Item("Гортензия", "137", R.drawable.os_hydrangea));
         mItemList.add(new Item("Лаванда", "200", R.drawable.os_lavender));
-        mItemList.add(new Item("Лобелия", "123", R.drawable.os_lobelia));
-        mItemList.add(new Item("alstroemeria", "137", R.drawable.os_muscari));
-        mItemList.add(new Item("aquilegia", "200", R.drawable.os_ornithogalum));
-        mItemList.add(new Item("amarylis", "123", R.drawable.os_osteospermum));
+        mItemList.add(new Item("Мускари", "137", R.drawable.os_muscari));
+        mItemList.add(new Item("Орнитогалум", "200", R.drawable.os_ornithogalum));
+        mItemList.add(new Item("Остеоспермум", "123", R.drawable.os_osteospermum));
         mItemList.add(new Item("Петуния", "137", R.drawable.os_petunia));
-        mItemList.add(new Item("Филадельфиус", "200", R.drawable.os_philadelphus));
-        mItemList.add(new Item("amarylis", "123", R.drawable.os_picea_pungens_glauca));
+        mItemList.add(new Item("Чубушник", "200", R.drawable.os_philadelphus));
+        mItemList.add(new Item("Пицея Пунгенс Глаука", "123", R.drawable.os_picea_pungens_glauca));
         mItemList.add(new Item("Роза", "137", R.drawable.os_rose_soil));
-        mItemList.add(new Item("aquilegia", "200", R.drawable.os_salix));
+        mItemList.add(new Item("Ива", "200", R.drawable.os_salix));
         mItemList.add(new Item("Подсолнух", "200", R.drawable.os_sunflower_soil));
     }
-
 }

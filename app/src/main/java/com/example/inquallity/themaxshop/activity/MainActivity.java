@@ -39,24 +39,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.ac_main);
-
-        mDrawerLayout = findViewById(R.id.drawer_layout_main_menu);
-        mNavigationView = findViewById(R.id.navigation_view_main);
-        mToolbar = findViewById(R.id.toolbar);
-
-        setSupportActionBar(mToolbar);
-
-        mActionBarDrawerToggle = new ActionBarDrawerToggle(
-                this, mDrawerLayout, mToolbar,
-                R.string.drawer_opened, R.string.drawer_closed);
-        mDrawerLayout.addDrawerListener(mActionBarDrawerToggle);
-
-    }
-
-    @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment targetFragment;
         switch (item.getItemId()){
@@ -76,9 +58,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 targetFragment = new WeatherFragment();
                 getSupportActionBar().setTitle(R.string.mi_weather);
                 break;
-                default:
-                    targetFragment = null;
-                    break;
+            default:
+                targetFragment = null;
+                break;
         }
 
         if (targetFragment != null){
@@ -91,11 +73,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.ac_main);
+
+        mDrawerLayout = findViewById(R.id.drawer_layout_main_menu);
+        mNavigationView = findViewById(R.id.navigation_view_main);
+        mToolbar = findViewById(R.id.toolbar);
+
+        setSupportActionBar(mToolbar);
+
+        mActionBarDrawerToggle = new ActionBarDrawerToggle(
+                this, mDrawerLayout, mToolbar,
+                R.string.drawer_opened, R.string.drawer_closed);
+        mDrawerLayout.addDrawerListener(mActionBarDrawerToggle);
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
         mActionBarDrawerToggle.syncState();
-        getSupportActionBar().setTitle("ololo");
         mNavigationView.setNavigationItemSelectedListener(this);
-
     }
 }

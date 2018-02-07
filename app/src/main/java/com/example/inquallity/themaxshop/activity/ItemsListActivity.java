@@ -15,9 +15,14 @@ import com.example.inquallity.themaxshop.fragment.ItemsListFragment;
  */
 
 public class ItemsListActivity extends AppCompatActivity {
-
-
     private Toolbar mToolbar;
+
+    @Override
+    public void onBackPressed() {
+        if (!getFragmentManager().popBackStackImmediate()) {
+            super.onBackPressed();
+        }
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -25,22 +30,21 @@ public class ItemsListActivity extends AppCompatActivity {
         setContentView(R.layout.ac_items_list);
 
         mToolbar = findViewById(R.id.toolbar_list_item);
-        mToolbar.setTitle("ololo2");
+        mToolbar.setTitle(R.string.example);
+
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                onBackPressed();
             }
         });
 
         final Bundle extras = getIntent().getExtras();
-        int i = extras.getInt("LIST_NUMBER");
-
         final Bundle extras2 = new Bundle();
-        extras2.putInt("LIST_NUMBER", i);
-
+        extras2.putInt("LIST_NUMBER", extras.getInt("LIST_NUMBER"));
 
         Fragment fragment = new ItemsListFragment();
         fragment.setArguments(extras2);

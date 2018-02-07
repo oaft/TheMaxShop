@@ -28,6 +28,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/item_name"
+                android:layout_gravity="center"
                 android:padding="@dimen/dp_4"
                 android:textSize="@dimen/sp_16" />
 
@@ -35,6 +36,7 @@
                 android:id="@+id/tv_item_price"
                 android:padding="@dimen/dp_4"
                 android:textSize="@dimen/sp_16"
+                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/price" />

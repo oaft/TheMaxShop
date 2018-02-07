@@ -11,10 +11,6 @@ import android.widget.TextView;
 
 import com.example.inquallity.themaxshop.R;
 import com.example.inquallity.themaxshop.activity.ItemsListActivity;
-import com.example.inquallity.themaxshop.model.Item;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author Olga Aleksandrova on 03.02.2018.
@@ -30,7 +26,6 @@ public class CatalogFragment extends Fragment {
     private TextView mTitleBasket;
     private TextView mTitleHousePlant;
     private TextView mTitleOpenSoil;
-    private List<Item> mItemList = new ArrayList<>();
 
     @Nullable
     @Override
