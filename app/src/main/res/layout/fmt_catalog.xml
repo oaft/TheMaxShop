@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back_catalog5">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_8">
+
+        <ImageView
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:contentDescription="@string/product_picture"
+            android:src="@drawable/ic_flower"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingLeft="@dimen/dp_8"
+            android:text="@string/title_flowers"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_title_classic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_72"
+        android:paddingBottom="@dimen/dp_4"
+        android:paddingLeft="@dimen/dp_4"
+        android:paddingRight="@dimen/dp_4"
+        android:textColor="@color/colorBlack"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/sub_title_classic"/>
+
+    <TextView
+        android:id="@+id/tv_title_original"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_72"
+        android:padding="@dimen/dp_4"
+        android:clickable="true"
+        android:focusable="true"
+        android:textColor="@color/colorBlack"
+        android:text="@string/sub_title_original"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_8">
+
+        <ImageView
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:contentDescription="@string/product_picture"
+            android:src="@drawable/ic_boquet"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingLeft="@dimen/dp_8"
+            android:text="@string/title_bouquet"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_title_round_b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_72"
+        android:paddingBottom="@dimen/dp_4"
+        android:paddingLeft="@dimen/dp_4"
+        android:paddingRight="@dimen/dp_4"
+        android:textColor="@color/colorBlack"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/sub_title_round_bouquet"/>
+
+    <TextView
+        android:id="@+id/tv_title_vertical_b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_72"
+        android:padding="@dimen/dp_4"
+        android:textColor="@color/colorBlack"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/sub_title_vertical_bouquet"/>
+
+    <TextView
+        android:id="@+id/tv_title_original_b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_72"
+        android:padding="@dimen/dp_4"
+        android:textColor="@color/colorBlack"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/sub_title_original_bouquet"/>
+
+    <TextView
+        android:id="@+id/tv_title_fbasket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_72"
+        android:padding="@dimen/dp_4"
+        android:textColor="@color/colorBlack"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/sub_title_flower_basket"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_8">
+
+        <ImageView
+            android:layout_width="@dimen/dp_50"
+            android:layout_height="@dimen/dp_50"
+            android:contentDescription="@string/product_picture"
+            android:src="@drawable/ic_plant3"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingLeft="@dimen/dp_8"
+            android:text="@string/title_plants"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_title_hp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_72"
+        android:paddingBottom="@dimen/dp_4"
+        android:paddingLeft="@dimen/dp_4"
+        android:paddingRight="@dimen/dp_4"
+        android:textColor="@color/colorBlack"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/sub_title_house_plant"/>
+
+    <TextView
+        android:id="@+id/tv_title_os"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_72"
+        android:padding="@dimen/dp_4"
+        android:textColor="@color/colorBlack"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/sub_title_open_soil"/>
+
+
+
+</LinearLayout>

@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">TheMaxShop</string>
+
+    <string name="mi_catalog">Каталог</string>
+    <string name="mi_our_shops">Наши магазины</string>
+    <string name="mi_weather">Погода</string>
+    <string name="mi_about_shop">О магазине</string>
+
+    <string name="about_shop_text">Магазин цветов ― ваш помощник в организации настоящего праздника для ваших близких и любимых людей.\n\n
+        Мы знаем, как из знакомых всем цветов можно создать удивительные композиции на все случаи жизни.\n\n
+        Красивые и элегантные, простые и изысканные букеты могут стать приятным сюрпризом для любимых в самый обычный день!</string>
+
+    <string name="drawer_opened">Opened</string>
+    <string name="drawer_closed">Closed</string>
+
+    <string name="product_picture">product picture</string>
+    <string name="price">price</string>
+    <string name="item_name">item name</string>
+
+    <string name="title_flowers">Цветы</string>
+    <string name="sub_title_classic">Классические цветы</string>
+    <string name="sub_title_original">Необычные цветы</string>
+
+    <string name="title_bouquet">Букеты</string>
+    <string name="sub_title_round_bouquet">Круглые букеты</string>
+    <string name="sub_title_vertical_bouquet">Вертикальные букеты</string>
+    <string name="sub_title_original_bouquet">Оригинальные букеты</string>
+    <string name="sub_title_flower_basket">Цветочные корзины</string>
+
+    <string name="title_plants">Растения</string>
+    <string name="sub_title_house_plant">Комнатные растения</string>
+    <string name="sub_title_open_soil">Растения открытого грунта</string>
+    <string name="back_pressed_text">Для выхода из приложения нажмите кнопку "Назад" еще раз</string>
+    <string name="example">ololo</string>
+
+</resources>
