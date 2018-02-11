@@ -7,4 +7,5 @@ import android.app.Application;
  */
 
 public class AppDelegate extends Application {
+
 }

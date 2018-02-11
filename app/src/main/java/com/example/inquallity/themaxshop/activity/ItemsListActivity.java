@@ -10,6 +10,8 @@ import android.view.View;
 import com.example.inquallity.themaxshop.R;
 import com.example.inquallity.themaxshop.fragment.ItemsListFragment;
 
+import butterknife.ButterKnife;
+
 /**
  * @author Olga Aleksandrova on 03.02.2018.
  */
@@ -28,6 +30,8 @@ public class ItemsListActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ac_items_list);
+
+
 
         mToolbar = findViewById(R.id.toolbar_list_item);
         mToolbar.setTitle(R.string.example);
