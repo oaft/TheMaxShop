@@ -22,16 +22,8 @@ public class Item {
         return mPrice;
     }
 
-    public void setPrice(String price) {
-        mPrice = price;
-    }
-
     public int getImageRes() {
         return mImageRes;
-    }
-
-    public void setImageRes(int imageRes) {
-        mImageRes = imageRes;
     }
 
     public Item(String title, String price, int imageRes) {
@@ -39,6 +31,5 @@ public class Item {
         mPrice = price;
         mImageRes = imageRes;
     }
-
 }
 

@@ -12,7 +12,6 @@ public class Main {
     private double mTemp;
 
     public int getTemp() {
-
         int temp = (int) (mTemp - 273.15);
         return temp;
     }

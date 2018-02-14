@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#fff4f8">
 
     <TextView
         android:id="@+id/tv_about_weather_fmt"
@@ -13,57 +14,57 @@
         android:padding="@dimen/dp_8"
         android:text="@string/mi_weather" />
 
-       <LinearLayout
+    <LinearLayout
+        android:id="@+id/ll_weather_block"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@+id/tv_about_weather_fmt">
+        android:layout_below="@+id/tv_about_weather_fmt"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/etCityName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="enter city"
-        android:textSize="12sp" />
+        <EditText
+            android:id="@+id/etCityName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="enter city"
+            android:textSize="12sp" />
 
-    <TextView
-        android:id="@+id/btnProceed"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/selectableItemBackground"
-        android:gravity="center"
-        android:text="show"
-        android:textAllCaps="true"
-        android:textColor="@android:color/black"
-        android:textSize="12sp" />
+        <TextView
+            android:id="@+id/btnProceed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="show"
+            android:textAllCaps="true"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
 
-    <TextView
-        android:id="@+id/tvTest"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="10sp" />
+        <TextView
+            android:id="@+id/tvCityName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="10sp" />
 
-    <TextView
-        android:id="@+id/tvCityName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="10sp" />
+        <TextView
+            android:id="@+id/tvTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            tools:text="10" />
 
-    <TextView
-        android:id="@+id/tvTemp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="12sp"
-        tools:text="10" />
-
-    <TextView
-        android:id="@+id/tvMain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="12sp"
-        tools:text="Clear" />
+        <TextView
+            android:id="@+id/tvMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            tools:text="Clear" />
     </LinearLayout>
 
-
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/weather_back2" />
 
 </RelativeLayout>

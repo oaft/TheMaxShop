@@ -10,6 +10,7 @@ import android.view.View;
 import com.example.inquallity.themaxshop.R;
 import com.example.inquallity.themaxshop.fragment.ItemsListFragment;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -17,7 +18,8 @@ import butterknife.ButterKnife;
  */
 
 public class ItemsListActivity extends AppCompatActivity {
-    private Toolbar mToolbar;
+
+    @BindView(R.id.toolbar_list_item) Toolbar mToolbar;
 
     @Override
     public void onBackPressed() {
@@ -30,10 +32,8 @@ public class ItemsListActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ac_items_list);
+        ButterKnife.bind(this);
 
-
-
-        mToolbar = findViewById(R.id.toolbar_list_item);
         mToolbar.setTitle(R.string.example);
 
         setSupportActionBar(mToolbar);
@@ -56,6 +56,4 @@ public class ItemsListActivity extends AppCompatActivity {
                 .replace(R.id.fl_items_list_content, fragment)
                 .commit();
     }
-
-
 }

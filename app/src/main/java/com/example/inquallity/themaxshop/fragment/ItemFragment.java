@@ -13,15 +13,19 @@ import android.widget.Toolbar;
 
 import com.example.inquallity.themaxshop.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+
 /**
  * Created by Inquallity on 05-Feb-18.
  */
 
 public class ItemFragment extends Fragment {
 
-    private TextView mItemTitle;
-    private ImageView mItemImage;
-
+    @BindView(R.id.tv_item_title) TextView mItemTitle;
+    @BindView(R.id.iv_item_image) ImageView mItemImage;
+    private Unbinder unbinder;
 
     @Nullable
     @Override
@@ -32,12 +36,17 @@ public class ItemFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        unbinder = ButterKnife.bind(this, view);
+
         ((AppCompatActivity)(getActivity())).getSupportActionBar().setTitle(getArguments().getString("KEY_TITLE", "TITLE NOT FOUND"));
 
-        mItemTitle = view.findViewById(R.id.tv_item_title);
-        mItemImage = view.findViewById(R.id.iv_item_image);
         mItemTitle.setText(getArguments().getString("KEY_TITLE", "TITLE NOT FOUND"));
         mItemImage.setImageResource(getArguments().getInt("KEY_IMG_RES"));
+    }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        unbinder.unbind();
     }
 }

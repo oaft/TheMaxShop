@@ -18,12 +18,14 @@ import com.example.inquallity.themaxshop.fragment.CatalogFragment;
 import com.example.inquallity.themaxshop.fragment.ShopsFragment;
 import com.example.inquallity.themaxshop.fragment.WeatherFragment;
 
+import butterknife.BindView;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private DrawerLayout mDrawerLayout;
-    private NavigationView mNavigationView;
+    @BindView(R.id.drawer_layout_main_menu) DrawerLayout mDrawerLayout;
+    @BindView(R.id.navigation_view_main) NavigationView mNavigationView;
+    @BindView(R.id.toolbar) Toolbar mToolbar;
     private ActionBarDrawerToggle mActionBarDrawerToggle;
-    private Toolbar mToolbar;
     private long back_pressed;
 
     @Override

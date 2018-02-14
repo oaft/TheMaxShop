@@ -8,23 +8,27 @@ import android.widget.TextView;
 import com.example.inquallity.themaxshop.R;
 import com.example.inquallity.themaxshop.model.Item;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * @author Olga Aleksandrova on 03.02.2018.
  */
 
 public class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-    private TextView mTitle;
-    private TextView mPrice;
-    private ImageView mImage;
+    @BindView(R.id.tv_item_name)
+    TextView mTitle;
+    @BindView(R.id.tv_item_price)
+    TextView mPrice;
+    @BindView(R.id.iv_item)
+    ImageView mImage;
     private ItemsListAdapter.OnCardClickListener mListener;
     private Item mItem;
 
     public ItemViewHolder(final View itemView) {
         super(itemView);
-        mTitle = itemView.findViewById(R.id.tv_item_name);
-        mPrice = itemView.findViewById(R.id.tv_item_price);
-        mImage = itemView.findViewById(R.id.iv_item);
+        ButterKnife.bind(this, itemView);
         itemView.setOnClickListener(this);
     }
 

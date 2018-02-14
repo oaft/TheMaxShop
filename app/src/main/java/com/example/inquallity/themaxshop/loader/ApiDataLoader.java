@@ -31,9 +31,6 @@ public class ApiDataLoader extends AsyncTaskLoader<City> {
 
     @Override
     public City loadInBackground() {
-        // выполнение запросов (и, следовательно, получение данных) синхронными
-        // запросами. Для синхронного (блокирующего) получения используется
-        // метод execute() у объекта типа Call
 
         String mCityName = mEditTextCityName.getText().toString();
 
@@ -64,6 +61,4 @@ public class ApiDataLoader extends AsyncTaskLoader<City> {
             forceLoad();
         }
     }
-
-
 }

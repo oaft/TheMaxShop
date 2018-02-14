@@ -3,6 +3,7 @@ package com.example.inquallity.themaxshop.fragment;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,16 +17,21 @@ import com.example.inquallity.themaxshop.model.Item;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+
 /**
  * Created by Inquallity on 05-Feb-18.
  */
 
 public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCardClickListener {
 
-    private RecyclerView mRecyclerView;
+    @BindView(R.id.rv_list_item) RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
     private ItemsListAdapter mItemsListAdapter;
     private List<Item> mItemList = new ArrayList<>();
+    private Unbinder unbinder;
 
     @Nullable
     @Override
@@ -36,13 +42,13 @@ public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCa
     @Override
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        unbinder = ButterKnife.bind(this, view);
 
         final Bundle bundle = this.getArguments();
         int i = bundle.getInt("LIST_NUMBER");
 
         initializeData(i);
 
-        mRecyclerView = view.findViewById(R.id.rv_list_item);
         mLayoutManager = new LinearLayoutManager(view.getContext());
         mItemsListAdapter = new ItemsListAdapter(mItemList);
         mRecyclerView.setLayoutManager(mLayoutManager);
@@ -52,7 +58,6 @@ public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCa
 
     @Override
     public void onCardClick(View view, String title, int imgRes) {
-
         Fragment fragment = new ItemFragment();
         Bundle bundle = new Bundle();
         bundle.putString("KEY_TITLE", title);
@@ -63,6 +68,12 @@ public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCa
                 .replace(R.id.fl_items_list_content, fragment)
                 .addToBackStack(fragment.getClass().getName())
                 .commit();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        unbinder.unbind();
     }
 
     private void initializeData(int i) {
@@ -97,6 +108,7 @@ public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCa
     }
 
     private void initializeClassicFlowerList() {
+        ((AppCompatActivity)(getActivity())).getSupportActionBar().setTitle(R.string.sub_title_classic);
         mItemList.add(new Item("Хризантема", "137", R.drawable.chrysanthemum));
         mItemList.add(new Item("Незабудка", "200", R.drawable.forget_me_not));
         mItemList.add(new Item("Гербера", "200", R.drawable.gerbera));
@@ -115,6 +127,7 @@ public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCa
     }
 
     private void initializeOriginFlowerList() {
+        ((AppCompatActivity)(getActivity())).getSupportActionBar().setTitle(R.string.sub_title_original);
         mItemList.add(new Item("Амарилис", "123", R.drawable.amaryllis));
         mItemList.add(new Item("Антуриум", "200", R.drawable.anthurium));
         mItemList.add(new Item("Антирринум", "123", R.drawable.antirrinum));
@@ -136,6 +149,7 @@ public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCa
     }
 
     private void initializeRoundBouquetList() {
+        ((AppCompatActivity)(getActivity())).getSupportActionBar().setTitle(R.string.sub_title_round_bouquet);
         mItemList.add(new Item("Круглый букет 1", "123", R.drawable.round_bouquet));
         mItemList.add(new Item("Круглый букет 2", "123", R.drawable.round_bouquet_2));
         mItemList.add(new Item("Круглый букет 3", "123", R.drawable.round_bouquet_3));
@@ -147,6 +161,7 @@ public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCa
     }
 
     private void initializeVerticalBouquetList() {
+        ((AppCompatActivity)(getActivity())).getSupportActionBar().setTitle(R.string.sub_title_vertical_bouquet);
         mItemList.add(new Item("Вертикальный букет 2", "123", R.drawable.vertical_bouquet_2));
         mItemList.add(new Item("Вертикальный букет 3", "123", R.drawable.vertical_bouquet_3));
         mItemList.add(new Item("Вертикальный букет 4", "123", R.drawable.vertical_bouquet_4));
@@ -156,6 +171,7 @@ public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCa
     }
 
     private void initializeOriginBouquetList() {
+        ((AppCompatActivity)(getActivity())).getSupportActionBar().setTitle(R.string.sub_title_original_bouquet);
         mItemList.add(new Item("Оригинальный букет 1", "137", R.drawable.original_bouquets));
         mItemList.add(new Item("Оригинальный букет 2", "137", R.drawable.original_bouquets_2));
         mItemList.add(new Item("Оригинальный букет 3", "137", R.drawable.original_bouquets_3));
@@ -170,6 +186,7 @@ public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCa
     }
 
     private void initializeFlowerBasketList() {
+        ((AppCompatActivity)(getActivity())).getSupportActionBar().setTitle(R.string.sub_title_flower_basket);
         mItemList.add(new Item("Цветочная корзина 2", "123", R.drawable.flower_basket_2));
         mItemList.add(new Item("Цветочная корзина 3", "137", R.drawable.flower_basket_3));
         mItemList.add(new Item("Цветочная корзина 4", "200", R.drawable.flower_basket_4));
@@ -182,6 +199,7 @@ public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCa
     }
 
     private void initializeHousePlantList() {
+        ((AppCompatActivity)(getActivity())).getSupportActionBar().setTitle(R.string.sub_title_house_plant);
         mItemList.add(new Item("Амариллис", "123", R.drawable.hp_amaryllis));
         mItemList.add(new Item("Антуриум", "137", R.drawable.hp_anthurium));
         mItemList.add(new Item("Араукария", "200", R.drawable.hp_araucaria));
@@ -205,6 +223,7 @@ public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCa
     }
 
     private void initializeOpenSoilPlantList() {
+        ((AppCompatActivity)(getActivity())).getSupportActionBar().setTitle(R.string.sub_title_open_soil);
         mItemList.add(new Item("Калиброхия", "123", R.drawable.os_calibrochia));
         mItemList.add(new Item("Кампанула", "137", R.drawable.os_campanula));
         mItemList.add(new Item("Хризантема", "200", R.drawable.os_chrysanthemum));

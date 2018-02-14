@@ -1,9 +1,7 @@
 package com.example.inquallity.themaxshop.fragment;
 
 import android.app.Fragment;
-import android.content.ContentValues;
 import android.content.Loader;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -11,11 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.inquallity.themaxshop.AppDelegate;
 import com.example.inquallity.themaxshop.R;
 import com.example.inquallity.themaxshop.api.WeatherApi;
 import com.example.inquallity.themaxshop.loader.ApiDataLoader;
@@ -23,7 +18,6 @@ import com.example.inquallity.themaxshop.model.City;
 import com.example.inquallity.themaxshop.model.Main;
 import com.example.inquallity.themaxshop.model.Weather;
 
-import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
@@ -33,9 +27,6 @@ import butterknife.OnClick;
 import butterknife.Unbinder;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -53,12 +44,8 @@ public class WeatherFragment extends Fragment {
     TextView mTemp;
     @BindView(R.id.tvMain)
     TextView mMain;
-    @BindView(R.id.btnProceed)
-    TextView mBtnProceed;
     @BindView(R.id.etCityName)
     EditText mEditTextCityName;
-    @BindView(R.id.tvTest)
-    TextView tvTest;
 
     private Retrofit mRetrofit;
     private String mExtraCityName;
@@ -69,19 +56,23 @@ public class WeatherFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fmt_weather, container, false);
-
     }
 
     @Override
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         unbinder = ButterKnife.bind(this, view);
 
         initRetrofit();
     }
 
-    public void initRetrofit() {
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        unbinder.unbind();
+    }
+
+    private void initRetrofit() {
         mRetrofit = new Retrofit.Builder()
                 .baseUrl(API_URL)
                 .addConverterFactory(GsonConverterFactory.create())
