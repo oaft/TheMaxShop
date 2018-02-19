@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Калиброхия",
+    "price": "500 \u20BD",
+    "image_url": "images/os_calibrochia.jpg"
+  },
+  {
+    "title": "Кампанула",
+    "price": "660 \u20BD",
+    "image_url": "images/os_campanula.jpg"
+  },
+  {
+    "title": "Хризантема",
+    "price": "360 \u20BD",
+    "image_url": "images/os_chrysanthemum.jpg"
+  },
+  {
+    "title": "Кизил цветущий",
+    "price": "200 \u20BD",
+    "image_url": "images/os_cornus_florida.jpg"
+  },
+  {
+    "title": "Купрессус Голдкрест",
+    "price": "460 \u20BD",
+    "image_url": "images/os_cupressus_goldcrest.jpg"
+  },
+  {
+    "title": "Гайлардия",
+    "price": "500 \u20BD",
+    "image_url": "images/os_gaillardia.jpg"
+  },
+  {
+    "title": "Вереск",
+    "price": "600 \u20BD",
+    "image_url": "images/os_heather.jpg"
+  },
+  {
+    "title": "Гортензия",
+    "price": "1300 \u20BD",
+    "image_url": "images/os_hydrangea.jpg"
+  },
+  {
+    "title": "Лаванда",
+    "price": "700 \u20BD",
+    "image_url": "images/os_lavender.jpg"
+  },
+  {
+    "title": "Мускари",
+    "price": "270 \u20BD",
+    "image_url": "images/os_muscari.jpg"
+  },
+  {
+    "title": "Орнитогалум",
+    "price": "420 \u20BD",
+    "image_url": "images/os_ornithogalum.jpg"
+  },
+  {
+    "title": "Остеоспермум",
+    "price": "300 \u20BD",
+    "image_url": "images/os_osteospermum.jpg"
+  },
+  {
+    "title": "Петуния",
+    "price": "450 \u20BD",
+    "image_url": "images/os_petunia.jpg"
+  },
+  {
+    "title": "Чубушник",
+    "price": "1300 \u20BD",
+    "image_url": "images/os_philadelphus.jpg"
+  },
+  {
+    "title": "Пицея Пунгенс Глаука",
+    "price": "850 \u20BD",
+    "image_url": "images/os_picea_pungens_glauca.jpg"
+  },
+  {
+    "title": "Роза",
+    "price": "700 \u20BD",
+    "image_url": "images/os_rose_soil.jpg"
+  },
+  {
+    "title": "Ива",
+    "price": "900 \u20BD",
+    "image_url": "images/os_salix.jpg"
+  },
+  {
+    "title": "Подсолнух",
+    "price": "950 \u20BD",
+    "image_url": "images/os_sunflower_soil.jpg"
+  }
+]

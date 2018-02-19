@@ -74,6 +74,7 @@ public class CatalogFragment extends Fragment {
         }
         Intent intent = new Intent(view.getContext(), ItemsListActivity.class);
         intent.putExtra("LIST_NUMBER", listNumber);
+        intent.putExtra("TITLE", ((TextView) view).getText());
         startActivity(intent);
     }
 

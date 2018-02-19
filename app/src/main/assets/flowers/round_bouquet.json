@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Феерия чувств",
+    "price": "3390 \u20BD",
+    "image_url": "images/round_bouquet_1.jpg"
+  },
+  {
+    "title": "Волшебство природы",
+    "price": "5520 \u20BD",
+    "image_url": "images/round_bouquet_2.jpg"
+  },
+  {
+    "title": "Седьмое небо",
+    "price": "3780 \u20BD",
+    "image_url": "images/round_bouquet_3.jpg"
+  },
+  {
+    "title": "Яркая фантазия",
+    "price": "4280 \u20BD",
+    "image_url": "images/round_bouquet_4.jpg"
+  },
+  {
+    "title": "Жемчужина",
+    "price": "3290 \u20BD",
+    "image_url": "images/round_bouquet_5.jpg"
+  },
+  {
+    "title": "Шарлотта",
+    "price": "3770 \u20BD",
+    "image_url": "images/round_bouquet_6.jpg"
+  },
+  {
+    "title": "Розовая пантера",
+    "price": "2890 \u20BD",
+    "image_url": "images/round_bouquet_7.jpg"
+  },
+  {
+    "title": "Весеннее настроение",
+    "price": "4120 \u20BD",
+    "image_url": "images/round_bouquet_8.jpg"
+  }
+]

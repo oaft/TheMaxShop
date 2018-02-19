@@ -1,0 +1,540 @@
+{
+  "flowers": {
+    "classic": [
+      {
+        "title": "Хризантема",
+        "price": "90 \u20BD",
+        "image_url": "R.drawable.chrysanthemum"
+      },
+      {
+        "title": "Гербера",
+        "price": "130 \u20BD",
+        "image_url": "R.drawable.gerbera"
+      },
+      {
+        "title": "Незабудка",
+        "price": "110 \u20BD",
+        "image_url": "R.drawable.forget_me_not"
+      },
+      {
+        "title": "Гладиолус",
+        "price": "200 \u20BD",
+        "image_url": "R.drawable.gladiolus"
+      },
+      {
+        "title": "Гиацинт",
+        "price": "100 \u20BD",
+        "image_url": "R.drawable.hyacinth"
+      },
+      {
+        "title": "Лилия",
+        "price": "250 \u20BD",
+        "image_url": "R.drawable.lily"
+      },
+      {
+        "title": "Ландыш",
+        "price": "200 \u20BD",
+        "image_url": "R.drawable.may_lily"
+      },
+      {
+        "title": "Нарцисс",
+        "price": "50 \u20BD",
+        "image_url": " R.drawable.narcissus"
+      },
+      {
+        "title": "Орхидея",
+        "price": "1100 \u20BD",
+        "image_url": "R.drawable.orchid"
+      },
+      {
+        "title": "Астра",
+        "price": "100 \u20BD",
+        "image_url": "R.drawable.aster"
+      },
+      {
+        "title": "Пион",
+        "price": "250 \u20BD",
+        "image_url": "R.drawable.peony"
+      },
+      {
+        "title": "Роза",
+        "price": "190 \u20BD",
+        "image_url": " R.drawable.rose"
+      },
+      {
+        "title": "Подсолнух",
+        "price": "320 \u20BD",
+        "image_url": "R.drawable.sunflower"
+      },
+      {
+        "title": "Тюльпан",
+        "price": "60 \u20BD",
+        "image_url": " R.drawable.tulip"
+      },
+      {
+        "title": "Ирис",
+        "price": "170 \u20BD",
+        "image_url": " R.drawable.fleur_de_lis"
+      }
+    ],
+    "original": [
+      {
+        "title": "Амарилис",
+        "price": "350 ₽",
+        "image_url": "R.drawable.amaryllis"
+      },
+      {
+        "title": "Аквиледжия",
+        "price": "200 ₽",
+        "image_url": "R.drawable.aquilegia"
+      },
+      {
+        "title": "Антуриум",
+        "price": "290 \u20BD",
+        "image_url": "R.drawable.anthurium"
+      },
+      {
+        "title": "Антирринум",
+        "price": "260 \u20BD",
+        "image_url": "R.drawable.antirrinum"
+      },
+      {
+        "title": "Дельфиниум",
+        "price": "345 \u20BD",
+        "image_url": "R.drawable.delphinium"
+      },
+      {
+        "title": "Диантус",
+        "price": "120 \u20BD",
+        "image_url": "R.drawable.dianthus_barbatus"
+      },
+      {
+        "title": "Ранукулюс",
+        "price": "250 \u20BD",
+        "image_url": "R.drawable.ranunculus"
+      },
+      {
+        "title": "Галантус",
+        "price": "550 \u20BD",
+        "image_url": "R.drawable.galanthus"
+      },
+      {
+        "title": "Гентиан",
+        "price": "320 \u20BD",
+        "image_url": "R.drawable.gentian"
+      },
+      {
+        "title": "Гилли",
+        "price": "390 \u20BD",
+        "image_url": "R.drawable.gillyflower"
+      },
+      {
+        "title": "Гидра",
+        "price": "350 \u20BD",
+        "image_url": "R.drawable.hydrangea"
+      },
+      {
+        "title": "Латур",
+        "price": "250 \u20BD",
+        "image_url": "R.drawable.latyrus"
+      },
+      {
+        "title": "Лузиан",
+        "price": "220 \u20BD",
+        "image_url": "R.drawable.lysianthus"
+      },
+      {
+        "title": "Мускари",
+        "price": "300 \u20BD",
+        "image_url": "R.drawable.muscari"
+      },
+      {
+        "title": "Тумерик",
+        "price": "250 \u20BD",
+        "image_url": "R.drawable.turmeric"
+      },
+      {
+        "title": "Кампанула",
+        "price": "200 \u20BD",
+        "image_url": "R.drawable.campanula"
+      },
+      {
+        "title": "Карнатион",
+        "price": "120 \u20BD",
+        "image_url": "R.drawable.carnation"
+      }
+    ],
+    "roundBouquet": [
+      {
+        "title": "Феерия чувств",
+        "price": "3390 \u20BD",
+        "image_url": "R.drawable.round_bouquet_1"
+      },
+      {
+        "title": "Волшебство природы",
+        "price": "5520 \u20BD",
+        "image_url": "R.drawable.round_bouquet_2"
+      },
+      {
+        "title": "Седьмое небо",
+        "price": "3780 \u20BD",
+        "image_url": "R.drawable.round_bouquet_3"
+      },
+      {
+        "title": "Яркая фантазия",
+        "price": "4280 \u20BD",
+        "image_url": "R.drawable.round_bouquet_4"
+      },
+      {
+        "title": "Жемчужина",
+        "price": "3290 \u20BD",
+        "image_url": "R.drawable.round_bouquet_5"
+      },
+      {
+        "title": "Шарлотта",
+        "price": "3770 \u20BD",
+        "image_url": "R.drawable.round_bouquet_6"
+      },
+      {
+        "title": "Розовая пантера",
+        "price": "2890 \u20BD",
+        "image_url": "R.drawable.round_bouquet_7"
+      },
+      {
+        "title": "Весеннее настроение",
+        "price": "4120 \u20BD",
+        "image_url": "R.drawable.round_bouquet_8"
+      }
+    ],
+    "verticalBouquet": [
+      {
+        "title": "История любви",
+        "price": "5800 \u20BD",
+        "image_url": " R.drawable.vertical_bouquet_2"
+      },
+      {
+        "title": "Капелька счастья",
+        "price": "4520 \u20BD",
+        "image_url": " R.drawable.vertical_bouquet_3"
+      },
+      {
+        "title": "Исполняющий желания",
+        "price": "3780 \u20BD",
+        "image_url": " R.drawable.vertical_bouquet_4"
+      },
+      {
+        "title": "Кремовое настроение",
+        "price": "5400 \u20BD",
+        "image_url": " R.drawable.vertical_bouquet_5"
+      },
+      {
+        "title": "Ласточка",
+        "price": "3500 \u20BD",
+        "image_url": " R.drawable.vertical_bouquet_6"
+      },
+      {
+        "title": "Лунный букет",
+        "price": "4230 \u20BD",
+        "image_url": "R.drawable.vertical_bouquet_7"
+      }
+    ],
+    "originBouquet": [
+      {
+        "title": "Нежнее нежного",
+        "price": "5120 \u20BD",
+        "image_url": "R.drawable.original_bouquets"
+      },
+      {
+        "title": "Новогоднее настроение",
+        "price": "4080 \u20BD",
+        "image_url": " R.drawable.original_bouquets_2"
+      },
+      {
+        "title": "Красота природы",
+        "price": "5100 \u20BD",
+        "image_url": " R.drawable.original_bouquets_3"
+      },
+      {
+        "title": "Нежные чувства",
+        "price": "2500 \u20BD",
+        "image_url": "  R.drawable.original_bouquets_4"
+      },
+      {
+        "title": "Муза",
+        "price": "3150 \u20BD",
+        "image_url": " R.drawable.original_bouquets_5"
+      },
+      {
+        "title": "Яркое лето",
+        "price": "3700 \u20BD",
+        "image_url": " R.drawable.original_bouquets_6"
+      },
+      {
+        "title": "Розовая сказка",
+        "price": "2600 \u20BD",
+        "image_url": " R.drawable.original_bouquets_7"
+      },
+      {
+        "title": "Сладкое утро",
+        "price": "4900 \u20BD",
+        "image_url": "   R.drawable.dutch_bouquets_2"
+      },
+      {
+        "title": "Солнечный свет",
+        "price": "4500 \u20BD",
+        "image_url": " R.drawable.dutch_bouquets_3"
+      },
+      {
+        "title": "Сияние",
+        "price": "4780 \u20BD",
+        "image_url": " R.drawable.dutch_bouquets_4"
+      },
+      {
+        "title": "Маленькая Леди",
+        "price": "3780 \u20BD",
+        "image_url": " R.drawable.dutch_bouquets_5"
+      }
+    ],
+    "flowerBasket": [
+      {
+        "title": "Нежное прикосновение",
+        "price": "4120 \u20BD",
+        "image_url": " R.drawable.flower_basket_2"
+      },
+      {
+        "title": "Вдохновение",
+        "price": "3780 \u20BD",
+        "image_url": " R.drawable.flower_basket_3"
+      },
+      {
+        "title": "Белые ночи",
+        "price": "3980 \u20BD",
+        "image_url": " R.drawable.flower_basket_4"
+      },
+      {
+        "title": "Вальс цветов",
+        "price": "4500 \u20BD",
+        "image_url": " R.drawable.flower_basket_5"
+      },
+      {
+        "title": "Воздушные мечты",
+        "price": "3100 \u20BD",
+        "image_url": " R.drawable.flower_basket_6"
+      },
+      {
+        "title": "Яркая вспышка",
+        "price": "4500 \u20BD",
+        "image_url": " R.drawable.flower_basket_7"
+      },
+      {
+        "title": "Ягодный десерт",
+        "price": "5000 \u20BD",
+        "image_url": " R.drawable.flower_basket_8"
+      },
+      {
+        "title": "Робкая надежда",
+        "price": "3970 \u20BD",
+        "image_url": " R.drawable.flower_basket_9"
+      },
+      {
+        "title": "Мелодия чувств",
+        "price": "3500 \u20BD",
+        "image_url": " R.drawable.flower_basket_10"
+      }
+    ],
+    "housePlant": [
+      {
+        "title": "Амариллис",
+        "price": "330 \u20BD",
+        "image_url": " R.drawable.hp_amaryllis"
+      },
+      {
+        "title": "Антуриум",
+        "price": "1050 \u20BD",
+        "image_url": " R.drawable.hp_anthurium"
+      },
+      {
+        "title": "Араукария",
+        "price": "560 \u20BD",
+        "image_url": " R.drawable.hp_araucaria"
+      },
+      {
+        "title": "Асплениум",
+        "price": "540 \u20BD",
+        "image_url": " R.drawable.hp_asplenium"
+      },
+      {
+        "title": "Азалия",
+        "price": "470 \u20BD",
+        "image_url": " R.drawable.hp_azalea"
+      },
+      {
+        "title": "Бегония",
+        "price": "300 \u20BD",
+        "image_url": " R.drawable.hp_begonia"
+      },
+      {
+        "title": "Каламондин",
+        "price": "1500 \u20BD",
+        "image_url": " R.drawable.hp_calamondin"
+      },
+      {
+        "title": "Калатея",
+        "price": "900 \u20BD",
+        "image_url": " R.drawable.hp_calathea"
+      },
+      {
+        "title": "Лимон",
+        "price": "1700 \u20BD",
+        "image_url": " R.drawable.hp_citrus"
+      },
+      {
+        "title": "Кливия",
+        "price": "1100 \u20BD",
+        "image_url": " R.drawable.hp_clivia"
+      },
+      {
+        "title": "Кодиеум",
+        "price": "500 \u20BD",
+        "image_url": " R.drawable.hp_codiaeum"
+      },
+      {
+        "title": "Крассула",
+        "price": "450 \u20BD",
+        "image_url": " R.drawable.hp_crassula"
+      },
+      {
+        "title": "Артишок",
+        "price": "900 \u20BD",
+        "image_url": " R.drawable.hp_cynara"
+      },
+      {
+        "title": "Орхидея Дендробиум ",
+        "price": "1100 \u20BD",
+        "image_url": " R.drawable.hp_dendrobium_nobile"
+      },
+      {
+        "title": "Дипладения",
+        "price": "500 \u20BD",
+        "image_url": " R.drawable.hp_dipladenia"
+      },
+      {
+        "title": "Гибискус",
+        "price": "380 \u20BD",
+        "image_url": " R.drawable.hp_hibiscus"
+      },
+      {
+        "title": "Каланхоэ",
+        "price": "600 \u20BD",
+        "image_url": " R.drawable.hp_kalanchoe"
+      },
+      {
+        "title": "Нарцисс",
+        "price": "550 \u20BD",
+        "image_url": " R.drawable.hp_narcissus"
+      },
+      {
+        "title": "Нертера",
+        "price": "400 \u20BD",
+        "image_url": " R.drawable.hp_nertera"
+      },
+      {
+        "title": "Орхидея Онцидиум",
+        "price": "1500 \u20BD",
+        "image_url": " R.drawable.hp_oncidium"
+      }
+    ],
+    "openSoilPlant": [
+      {
+        "title": "Калиброхия",
+        "price": "500 \u20BD",
+        "image_url": " R.drawable.os_calibrochia"
+      },
+      {
+        "title": "Кампанула",
+        "price": "660 \u20BD",
+        "image_url": " R.drawable.os_campanula"
+      },
+      {
+        "title": "Хризантема",
+        "price": "360 \u20BD",
+        "image_url": " R.drawable.os_chrysanthemum"
+      },
+      {
+        "title": "Кизил цветущий",
+        "price": "200 \u20BD",
+        "image_url": " R.drawable.os_cornus_florida"
+      },
+      {
+        "title": "Купрессус Голдкрест",
+        "price": "460 \u20BD",
+        "image_url": " R.drawable.os_cupressus_goldcrest"
+      },
+      {
+        "title": "Гайлардия",
+        "price": "500 \u20BD",
+        "image_url": " R.drawable.os_gaillardia"
+      },
+      {
+        "title": "Вереск",
+        "price": "600 \u20BD",
+        "image_url": " R.drawable.os_heather"
+      },
+      {
+        "title": "Гортензия",
+        "price": "1300 \u20BD",
+        "image_url": " R.drawable.os_hydrangea"
+      },
+      {
+        "title": "Лаванда",
+        "price": "700 \u20BD",
+        "image_url": " R.drawable.os_lavender"
+      },
+      {
+        "title": "Мускари",
+        "price": "270 \u20BD",
+        "image_url": " R.drawable.os_muscari"
+      },
+      {
+        "title": "Орнитогалум",
+        "price": "420 \u20BD",
+        "image_url": " R.drawable.os_ornithogalum"
+      },
+      {
+        "title": "Остеоспермум",
+        "price": "300 \u20BD",
+        "image_url": " R.drawable.os_osteospermum"
+      },
+      {
+        "title": "Петуния",
+        "price": "450 \u20BD",
+        "image_url": " R.drawable.os_petunia"
+      },
+      {
+        "title": "Чубушник",
+        "price": "1300 \u20BD",
+        "image_url": " R.drawable.os_philadelphus"
+      },
+      {
+        "title": "Пицея Пунгенс Глаука",
+        "price": "850 \u20BD",
+        "image_url": " R.drawable.os_picea_pungens_glauca"
+      },
+      {
+        "title": "Роза",
+        "price": "700 \u20BD",
+        "image_url": " R.drawable.os_rose_soil"
+      },
+      {
+        "title": "Ива",
+        "price": "900 \u20BD",
+        "image_url": " R.drawable.os_salix"
+      },
+      {
+        "title": "Подсолнух",
+        "price": "950 \u20BD",
+        "image_url": " R.drawable.os_sunflower_soil"
+      }
+    ]
+  }
+}

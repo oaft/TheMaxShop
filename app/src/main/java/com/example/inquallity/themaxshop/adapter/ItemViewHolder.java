@@ -1,5 +1,6 @@
 package com.example.inquallity.themaxshop.adapter;
 
+import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
@@ -35,16 +36,19 @@ public class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnCl
     public void bindItem(Item item) {
         mItem = item;
         mTitle.setText(item.getTitle());
-        mImage.setImageResource(item.getImageRes());
         mPrice.setText(item.getPrice());
     }
 
     @Override
     public void onClick(View v) {
-        mListener.onCardClick(v, mItem.getTitle(), mItem.getImageRes(), mItem.getPrice());
+        mListener.onCardClick(v, mItem.getTitle(), mItem.getImageUrl(), mItem.getPrice());
     }
 
     public void setOnCardClickListener(ItemsListAdapter.OnCardClickListener listener) {
         this.mListener = listener;
+    }
+
+    public void bindImage(Bitmap bitmap) {
+        mImage.setImageBitmap(bitmap);
     }
 }

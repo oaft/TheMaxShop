@@ -1,0 +1,87 @@
+[
+  {
+    "title": "Амарилис",
+    "price": "350 ₽",
+    "image_url": "images/amaryllis.jpg"
+  },
+  {
+    "title": "Аквиледжия",
+    "price": "200 ₽",
+    "image_url": "images/aquilegia.jpg"
+  },
+  {
+    "title": "Антуриум",
+    "price": "290 \u20BD",
+    "image_url": "images/anthurium.jpg"
+  },
+  {
+    "title": "Антирринум",
+    "price": "260 \u20BD",
+    "image_url": "images/antirrinum.jpg"
+  },
+  {
+    "title": "Дельфиниум",
+    "price": "345 \u20BD",
+    "image_url": "images/delphinium.jpg"
+  },
+  {
+    "title": "Диантус",
+    "price": "120 \u20BD",
+    "image_url": "images/dianthus_barbatus.jpg"
+  },
+  {
+    "title": "Ранукулюс",
+    "price": "250 \u20BD",
+    "image_url": "images/ranunculus.jpg"
+  },
+  {
+    "title": "Галантус",
+    "price": "550 \u20BD",
+    "image_url": "images/galanthus.jpg"
+  },
+  {
+    "title": "Гентиан",
+    "price": "320 \u20BD",
+    "image_url": "images/gentian.jpg"
+  },
+  {
+    "title": "Гилли",
+    "price": "390 \u20BD",
+    "image_url": "images/gillyflower.jpg"
+  },
+  {
+    "title": "Гидра",
+    "price": "350 \u20BD",
+    "image_url": "images/hydrangea.jpg"
+  },
+  {
+    "title": "Латур",
+    "price": "250 \u20BD",
+    "image_url": "images/latyrus.jpg"
+  },
+  {
+    "title": "Лузиан",
+    "price": "220 \u20BD",
+    "image_url": "images/lysianthus.jpg"
+  },
+  {
+    "title": "Мускари",
+    "price": "300 \u20BD",
+    "image_url": "images/muscari.jpg"
+  },
+  {
+    "title": "Тумерик",
+    "price": "250 \u20BD",
+    "image_url": "images/turmeric.jpg"
+  },
+  {
+    "title": "Кампанула",
+    "price": "200 \u20BD",
+    "image_url": "images/campanula.jpg"
+  },
+  {
+    "title": "Карнатион",
+    "price": "120 \u20BD",
+    "image_url": "images/carnation.jpg"
+  }
+]

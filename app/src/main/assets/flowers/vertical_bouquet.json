@@ -1,0 +1,32 @@
+[
+  {
+    "title": "История любви",
+    "price": "5800 \u20BD",
+    "image_url": "images/vertical_bouquet_2.jpg"
+  },
+  {
+    "title": "Капелька счастья",
+    "price": "4520 \u20BD",
+    "image_url": "images/vertical_bouquet_3.jpg"
+  },
+  {
+    "title": "Исполняющий желания",
+    "price": "3780 \u20BD",
+    "image_url": "images/vertical_bouquet_4.jpg"
+  },
+  {
+    "title": "Кремовое настроение",
+    "price": "5400 \u20BD",
+    "image_url": "images/vertical_bouquet_5.jpg"
+  },
+  {
+    "title": "Ласточка",
+    "price": "3500 \u20BD",
+    "image_url": "images/vertical_bouquet_6.jpg"
+  },
+  {
+    "title": "Лунный букет",
+    "price": "4230 \u20BD",
+    "image_url": "images/vertical_bouquet_7.jpg"
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Нежное прикосновение",
+    "price": "4120 \u20BD",
+    "image_url": "images/flower_basket_2.jpg"
+  },
+  {
+    "title": "Вдохновение",
+    "price": "3780 \u20BD",
+    "image_url": "images/flower_basket_3.jpg"
+  },
+  {
+    "title": "Белые ночи",
+    "price": "3980 \u20BD",
+    "image_url": "images/flower_basket_4.jpg"
+  },
+  {
+    "title": "Вальс цветов",
+    "price": "4500 \u20BD",
+    "image_url": "images/flower_basket_5.jpg"
+  },
+  {
+    "title": "Воздушные мечты",
+    "price": "3100 \u20BD",
+    "image_url": "images/flower_basket_6.jpg"
+  },
+  {
+    "title": "Яркая вспышка",
+    "price": "4500 \u20BD",
+    "image_url": "images/flower_basket_7.jpg"
+  },
+  {
+    "title": "Ягодный десерт",
+    "price": "5000 \u20BD",
+    "image_url": "images/flower_basket_8.jpg"
+  },
+  {
+    "title": "Робкая надежда",
+    "price": "3970 \u20BD",
+    "image_url": "images/flower_basket_9.jpg"
+  },
+  {
+    "title": "Мелодия чувств",
+    "price": "3500 \u20BD",
+    "image_url": "images/flower_basket_10.jpg"
+  }
+]

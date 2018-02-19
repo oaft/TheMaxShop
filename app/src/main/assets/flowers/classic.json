@@ -1,0 +1,77 @@
+[
+  {
+    "title": "Хризантема",
+    "price": "90 \u20BD",
+    "image_url": "images/chrysanthemum.jpg"
+  },
+  {
+    "title": "Гербера",
+    "price": "130 \u20BD",
+    "image_url": "images/gerbera.jpg"
+  },
+  {
+    "title": "Незабудка",
+    "price": "110 \u20BD",
+    "image_url": "images/forget_me_not.jpg"
+  },
+  {
+    "title": "Гладиолус",
+    "price": "200 \u20BD",
+    "image_url": "images/gladiolus.jpg"
+  },
+  {
+    "title": "Гиацинт",
+    "price": "100 \u20BD",
+    "image_url": "images/hyacinth.jpg"
+  },
+  {
+    "title": "Лилия",
+    "price": "250 \u20BD",
+    "image_url": "images/lily.jpg"
+  },
+  {
+    "title": "Ландыш",
+    "price": "200 \u20BD",
+    "image_url": "images/may_lily.jpg"
+  },
+  {
+    "title": "Нарцисс",
+    "price": "50 \u20BD",
+    "image_url": "images/narcissus.jpg"
+  },
+  {
+    "title": "Орхидея",
+    "price": "1100 \u20BD",
+    "image_url": "images/orchid.jpg"
+  },
+  {
+    "title": "Астра",
+    "price": "100 \u20BD",
+    "image_url": "images/aster.jpg"
+  },
+  {
+    "title": "Пион",
+    "price": "250 \u20BD",
+    "image_url": "images/peony.jpg"
+  },
+  {
+    "title": "Роза",
+    "price": "190 \u20BD",
+    "image_url": " images/rose.jpg"
+  },
+  {
+    "title": "Подсолнух",
+    "price": "320 \u20BD",
+    "image_url": "images/sunflower.jpg"
+  },
+  {
+    "title": "Тюльпан",
+    "price": "60 \u20BD",
+    "image_url": " images/tulip.jpg"
+  },
+  {
+    "title": "Ирис",
+    "price": "170 \u20BD",
+    "image_url": " images/fleur_de_lis.jpg"
+  }
+]

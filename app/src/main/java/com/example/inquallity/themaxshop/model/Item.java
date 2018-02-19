@@ -1,14 +1,19 @@
 package com.example.inquallity.themaxshop.model;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * @author Olga Aleksandrova on 03.02.2018.
  */
 
 public class Item {
 
+    @SerializedName("title")
     private String mTitle;
+    @SerializedName("price")
     private String mPrice;
-    private int mImageRes;
+    @SerializedName("image_url")
+    private String mImageUrl;
 
     public String getTitle() {
         return mTitle;
@@ -22,14 +27,14 @@ public class Item {
         return mPrice;
     }
 
-    public int getImageRes() {
-        return mImageRes;
+    public String getImageUrl() {
+        return mImageUrl;
     }
 
-    public Item(String title, String price, int imageRes) {
+    public Item(String title, String price, String imageUrl) {
         mTitle = title;
         mPrice = price;
-        mImageRes = imageRes;
+        mImageUrl = imageUrl;
     }
 }
 

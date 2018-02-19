@@ -15,10 +15,12 @@ import android.widget.Toast;
 import com.example.inquallity.themaxshop.R;
 import com.example.inquallity.themaxshop.fragment.AboutShopFragment;
 import com.example.inquallity.themaxshop.fragment.CatalogFragment;
+import com.example.inquallity.themaxshop.fragment.MainFragment;
 import com.example.inquallity.themaxshop.fragment.ShopsFragment;
 import com.example.inquallity.themaxshop.fragment.WeatherFragment;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -27,6 +29,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @BindView(R.id.toolbar) Toolbar mToolbar;
     private ActionBarDrawerToggle mActionBarDrawerToggle;
     private long back_pressed;
+
+    @OnClick({R.id.btn_main})
 
     @Override
     public void onBackPressed() {
@@ -44,21 +48,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment targetFragment;
         switch (item.getItemId()){
-            case R.id.menu_item_about_us:
+            case R.id.mi_about_us:
                 targetFragment = new AboutShopFragment();
                 getSupportActionBar().setTitle(R.string.mi_about_shop);
                 break;
-            case R.id.menu_item_catalog:
+            case R.id.mi_catalog:
                 targetFragment = new CatalogFragment();
                 getSupportActionBar().setTitle(R.string.mi_catalog);
                 break;
-            case R.id.menu_item_shops:
+            case R.id.mi_shops:
                 targetFragment = new ShopsFragment();
                 getSupportActionBar().setTitle(R.string.mi_our_shops);
                 break;
-            case R.id.menu_item_weather:
+            case R.id.mi_weather:
                 targetFragment = new WeatherFragment();
                 getSupportActionBar().setTitle(R.string.mi_weather);
+                break;
+            case R.id.mi_main:
+                targetFragment = new MainFragment();
+                getSupportActionBar().setTitle(R.string.mi_main);
                 break;
             default:
                 targetFragment = null;
@@ -89,6 +97,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 this, mDrawerLayout, mToolbar,
                 R.string.drawer_opened, R.string.drawer_closed);
         mDrawerLayout.addDrawerListener(mActionBarDrawerToggle);
+
+        Fragment fragment = new MainFragment();
+        getFragmentManager().beginTransaction()
+                .replace(R.id.fl_content, fragment)
+                .commit();
     }
 
     @Override

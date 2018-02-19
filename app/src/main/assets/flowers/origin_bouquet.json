@@ -1,0 +1,57 @@
+[
+  {
+    "title": "Нежнее нежного",
+    "price": "5120 \u20BD",
+    "image_url": "images/original_bouquets.jpg"
+  },
+  {
+    "title": "Новогоднее настроение",
+    "price": "4080 \u20BD",
+    "image_url": "images/original_bouquets_2.jpg"
+  },
+  {
+    "title": "Красота природы",
+    "price": "5100 \u20BD",
+    "image_url": "images/original_bouquets_3.jpg"
+  },
+  {
+    "title": "Нежные чувства",
+    "price": "2500 \u20BD",
+    "image_url": "images/original_bouquets_4.jpg"
+  },
+  {
+    "title": "Муза",
+    "price": "3150 \u20BD",
+    "image_url": "images/original_bouquets_5.jpg"
+  },
+  {
+    "title": "Яркое лето",
+    "price": "3700 \u20BD",
+    "image_url": "images/original_bouquets_6.jpg"
+  },
+  {
+    "title": "Розовая сказка",
+    "price": "2600 \u20BD",
+    "image_url": "images/original_bouquets_7.jpg"
+  },
+  {
+    "title": "Сладкое утро",
+    "price": "4900 \u20BD",
+    "image_url": "images/dutch_bouquets_2.jpg"
+  },
+  {
+    "title": "Солнечный свет",
+    "price": "4500 \u20BD",
+    "image_url": "images/dutch_bouquets_3.jpg"
+  },
+  {
+    "title": "Сияние",
+    "price": "4780 \u20BD",
+    "image_url": "images/dutch_bouquets_4.jpg"
+  },
+  {
+    "title": "Маленькая Леди",
+    "price": "3780 \u20BD",
+    "image_url": "images/dutch_bouquets_5.jpg"
+  }
+]

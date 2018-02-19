@@ -1,0 +1,102 @@
+[
+  {
+    "title": "Амариллис",
+    "price": "330 \u20BD",
+    "image_url": "images/hp_amaryllis.jpg"
+  },
+  {
+    "title": "Антуриум",
+    "price": "1050 \u20BD",
+    "image_url": "images/hp_anthurium.jpg"
+  },
+  {
+    "title": "Араукария",
+    "price": "560 \u20BD",
+    "image_url": "images/hp_araucaria.jpg"
+  },
+  {
+    "title": "Асплениум",
+    "price": "540 \u20BD",
+    "image_url": "images/hp_asplenium.jpg"
+  },
+  {
+    "title": "Азалия",
+    "price": "470 \u20BD",
+    "image_url": "images/hp_azalea.jpg"
+  },
+  {
+    "title": "Бегония",
+    "price": "300 \u20BD",
+    "image_url": "images/hp_begonia.jpg"
+  },
+  {
+    "title": "Каламондин",
+    "price": "1500 \u20BD",
+    "image_url": "images/hp_calamondin.jpg"
+  },
+  {
+    "title": "Калатея",
+    "price": "900 \u20BD",
+    "image_url": "images/hp_calathea.jpg"
+  },
+  {
+    "title": "Лимон",
+    "price": "1700 \u20BD",
+    "image_url": "images/hp_citrus.jpg"
+  },
+  {
+    "title": "Кливия",
+    "price": "1100 \u20BD",
+    "image_url": "images/hp_clivia.jpg"
+  },
+  {
+    "title": "Кодиеум",
+    "price": "500 \u20BD",
+    "image_url": "images/hp_codiaeum.jpg"
+  },
+  {
+    "title": "Крассула",
+    "price": "450 \u20BD",
+    "image_url": "images/hp_crassula.jpg"
+  },
+  {
+    "title": "Артишок",
+    "price": "900 \u20BD",
+    "image_url": "images/hp_cynara.jpg"
+  },
+  {
+    "title": "Орхидея Дендробиум ",
+    "price": "1100 \u20BD",
+    "image_url": "images/hp_dendrobium_nobile.jpg"
+  },
+  {
+    "title": "Дипладения",
+    "price": "500 \u20BD",
+    "image_url": "images/hp_dipladenia.jpg"
+  },
+  {
+    "title": "Гибискус",
+    "price": "380 \u20BD",
+    "image_url": "images/hp_hibiscus.jpg"
+  },
+  {
+    "title": "Каланхоэ",
+    "price": "600 \u20BD",
+    "image_url": "images/hp_kalanchoe.jpg"
+  },
+  {
+    "title": "Нарцисс",
+    "price": "550 \u20BD",
+    "image_url": "images/hp_narcissus.jpg"
+  },
+  {
+    "title": "Нертера",
+    "price": "400 \u20BD",
+    "image_url": "images/hp_nertera.jpg"
+  },
+  {
+    "title": "Орхидея Онцидиум",
+    "price": "1500 \u20BD",
+    "image_url": "images/hp_oncidium.jpg"
+  }
+]

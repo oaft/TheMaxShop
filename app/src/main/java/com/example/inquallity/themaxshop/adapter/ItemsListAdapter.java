@@ -1,5 +1,8 @@
 package com.example.inquallity.themaxshop.adapter;
 
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,8 +11,9 @@ import android.view.ViewGroup;
 import com.example.inquallity.themaxshop.R;
 import com.example.inquallity.themaxshop.model.Item;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -20,6 +24,11 @@ public class ItemsListAdapter extends RecyclerView.Adapter<ItemViewHolder> {
 
     private OnCardClickListener mListener;
     private List<Item> mItemList = new ArrayList<>();
+    private AssetManager mAssetManager;
+
+    public ItemsListAdapter(AssetManager assetManager) {
+        mAssetManager = assetManager;
+    }
 
     public void setOnCardClickListener(OnCardClickListener listener) {
         mListener = listener;
@@ -35,7 +44,25 @@ public class ItemsListAdapter extends RecyclerView.Adapter<ItemViewHolder> {
     @Override
     public void onBindViewHolder(final ItemViewHolder holder, int position) {
         holder.setOnCardClickListener(mListener);
-        holder.bindItem(mItemList.get(position));
+        final Item item = mItemList.get(position);
+        holder.bindItem(item);
+        //
+        InputStream is = null;
+        try {
+            is = mAssetManager.open(item.getImageUrl());
+            final Bitmap bitmap = BitmapFactory.decodeStream(is);
+            holder.bindImage(bitmap);
+        } catch (IOException e) {
+            //log
+        } finally {
+            if (is != null){
+                try {
+                    is.close();
+                } catch (IOException e) {
+                    //log
+                }
+            }
+        }
     }
 
     @Override
@@ -51,6 +78,6 @@ public class ItemsListAdapter extends RecyclerView.Adapter<ItemViewHolder> {
     }
 
     public interface OnCardClickListener {
-        void onCardClick(View view, String title, int imageRes, String price);
+        void onCardClick(View view, String title, String imageUrl, String price);
     }
 }

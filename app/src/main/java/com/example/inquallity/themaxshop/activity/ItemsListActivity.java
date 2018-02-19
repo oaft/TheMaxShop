@@ -34,8 +34,6 @@ public class ItemsListActivity extends AppCompatActivity {
         setContentView(R.layout.ac_items_list);
         ButterKnife.bind(this);
 
-        mToolbar.setTitle(R.string.example);
-
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -49,7 +47,6 @@ public class ItemsListActivity extends AppCompatActivity {
         final Bundle extras = getIntent().getExtras();
         final Bundle extras2 = new Bundle();
         extras2.putInt("LIST_NUMBER", extras.getInt("LIST_NUMBER"));
-
         Fragment fragment = new ItemsListFragment();
         fragment.setArguments(extras2);
         getFragmentManager().beginTransaction()
