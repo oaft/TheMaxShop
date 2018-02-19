@@ -32,5 +32,11 @@
     <string name="sub_title_open_soil">Растения открытого грунта</string>
     <string name="back_pressed_text">Для выхода из приложения нажмите кнопку "Назад" еще раз</string>
     <string name="example">ololo</string>
+    <string name="enter_city">Название города</string>
+    <string name="background_picture">background picture</string>
+    <string name="weather_content">Узнайте погоду в вашем городе. Если ожидается дождь - захватите зонт, чтобы ваши цветы не промокли.</string>
+    <string name="not_exist_now">нет в наличии</string>
+    <string name="mi_main">Главная</string>
+    <string name="mi_list_goods">Список покупок</string>
 
 </resources>

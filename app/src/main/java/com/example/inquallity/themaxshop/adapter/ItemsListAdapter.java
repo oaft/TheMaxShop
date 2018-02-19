@@ -9,6 +9,7 @@ import com.example.inquallity.themaxshop.R;
 import com.example.inquallity.themaxshop.model.Item;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -19,10 +20,6 @@ public class ItemsListAdapter extends RecyclerView.Adapter<ItemViewHolder> {
 
     private OnCardClickListener mListener;
     private List<Item> mItemList = new ArrayList<>();
-
-    public ItemsListAdapter(List<Item> itemList) {
-        mItemList = itemList;
-    }
 
     public void setOnCardClickListener(OnCardClickListener listener) {
         mListener = listener;
@@ -46,7 +43,14 @@ public class ItemsListAdapter extends RecyclerView.Adapter<ItemViewHolder> {
         return mItemList.size();
     }
 
+    public void changeItems(List<Item> items) {
+        if (items!= null && !items.isEmpty()) {
+            mItemList = items;
+        }
+        notifyDataSetChanged();
+    }
+
     public interface OnCardClickListener {
-        void onCardClick(View view, String title, int imageRes);
+        void onCardClick(View view, String title, int imageRes, String price);
     }
 }

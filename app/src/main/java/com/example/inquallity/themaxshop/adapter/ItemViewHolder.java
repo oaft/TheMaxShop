@@ -41,7 +41,7 @@ public class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnCl
 
     @Override
     public void onClick(View v) {
-        mListener.onCardClick(v, mItem.getTitle(), mItem.getImageRes());
+        mListener.onCardClick(v, mItem.getTitle(), mItem.getImageRes(), mItem.getPrice());
     }
 
     public void setOnCardClickListener(ItemsListAdapter.OnCardClickListener listener) {

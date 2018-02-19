@@ -23,8 +23,8 @@ import butterknife.Unbinder;
 
 public class ItemFragment extends Fragment {
 
-    @BindView(R.id.tv_item_title) TextView mItemTitle;
     @BindView(R.id.iv_item_image) ImageView mItemImage;
+    @BindView(R.id.tv_price_view) TextView mItemPrice;
     private Unbinder unbinder;
 
     @Nullable
@@ -39,8 +39,7 @@ public class ItemFragment extends Fragment {
         unbinder = ButterKnife.bind(this, view);
 
         ((AppCompatActivity)(getActivity())).getSupportActionBar().setTitle(getArguments().getString("KEY_TITLE", "TITLE NOT FOUND"));
-
-        mItemTitle.setText(getArguments().getString("KEY_TITLE", "TITLE NOT FOUND"));
+        mItemPrice.setText(getArguments().getString("KEY_PRICE", getString(R.string.not_exist_now)));
         mItemImage.setImageResource(getArguments().getInt("KEY_IMG_RES"));
     }
 

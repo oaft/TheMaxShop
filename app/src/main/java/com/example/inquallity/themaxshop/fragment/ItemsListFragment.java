@@ -2,6 +2,7 @@ package com.example.inquallity.themaxshop.fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,6 +16,7 @@ import com.example.inquallity.themaxshop.adapter.ItemsListAdapter;
 import com.example.inquallity.themaxshop.model.Item;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import butterknife.BindView;
@@ -27,10 +29,11 @@ import butterknife.Unbinder;
 
 public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCardClickListener {
 
-    @BindView(R.id.rv_list_item) RecyclerView mRecyclerView;
+    @BindView(R.id.rv_list_item)
+    RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
-    private ItemsListAdapter mItemsListAdapter;
-    private List<Item> mItemList = new ArrayList<>();
+    private ItemsListAdapter mItemsListAdapter = new ItemsListAdapter();
+
     private Unbinder unbinder;
 
     @Nullable
@@ -47,21 +50,22 @@ public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCa
         final Bundle bundle = this.getArguments();
         int i = bundle.getInt("LIST_NUMBER");
 
-        initializeData(i);
+        final List<Item> items = initializeData(i);
 
         mLayoutManager = new LinearLayoutManager(view.getContext());
-        mItemsListAdapter = new ItemsListAdapter(mItemList);
         mRecyclerView.setLayoutManager(mLayoutManager);
         mItemsListAdapter.setOnCardClickListener(this);
         mRecyclerView.setAdapter(mItemsListAdapter);
+        mItemsListAdapter.changeItems(items);
     }
 
     @Override
-    public void onCardClick(View view, String title, int imgRes) {
+    public void onCardClick(View view, String title, int imgRes, String price) {
         Fragment fragment = new ItemFragment();
         Bundle bundle = new Bundle();
         bundle.putString("KEY_TITLE", title);
         bundle.putInt("KEY_IMG_RES", imgRes);
+        bundle.putString("KEY_PRICE", price);
         fragment.setArguments(bundle);
         getFragmentManager()
                 .beginTransaction()
@@ -76,171 +80,179 @@ public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCa
         unbinder.unbind();
     }
 
-    private void initializeData(int i) {
-        switch (i) {
+    private List<Item> initializeData(int position) {
+        switch (position) {
             case 1:
-                initializeClassicFlowerList();
-                break;
+                return initializeClassicFlowerList();
             case 2:
-                initializeOriginFlowerList();
-                break;
+                return initializeOriginFlowerList();
             case 3:
-                initializeRoundBouquetList();
-                break;
+                return initializeRoundBouquetList();
             case 4:
-                initializeVerticalBouquetList();
-                break;
+                return initializeVerticalBouquetList();
             case 5:
-                initializeOriginBouquetList();
-                break;
+                return initializeOriginBouquetList();
             case 6:
-                initializeFlowerBasketList();
-                break;
+                return initializeFlowerBasketList();
             case 7:
-                initializeHousePlantList();
-                break;
+                return initializeHousePlantList();
             case 8:
-                initializeOpenSoilPlantList();
-                break;
+                return initializeOpenSoilPlantList();
             default:
-                mItemList.add(new Item("Астра", "123", R.drawable.aster));
+                return Collections.singletonList(new Item("Ландыш", "200 \u20BD", R.drawable.may_lily));
         }
     }
 
-    private void initializeClassicFlowerList() {
-        ((AppCompatActivity)(getActivity())).getSupportActionBar().setTitle(R.string.sub_title_classic);
-        mItemList.add(new Item("Хризантема", "137", R.drawable.chrysanthemum));
-        mItemList.add(new Item("Незабудка", "200", R.drawable.forget_me_not));
-        mItemList.add(new Item("Гербера", "200", R.drawable.gerbera));
-        mItemList.add(new Item("Гладиолус", "200", R.drawable.gladiolus));
-        mItemList.add(new Item("глориоза", "200", R.drawable.gloriosa));
-        mItemList.add(new Item("Гиацинт", "200", R.drawable.hyacinth));
-        mItemList.add(new Item("Лилия", "200", R.drawable.lily));
-        mItemList.add(new Item("Ландыш", "200", R.drawable.may_lily));
-        mItemList.add(new Item("Нарцисс", "200", R.drawable.narcissus));
-        mItemList.add(new Item("Орхидея", "200", R.drawable.orchid));
-        mItemList.add(new Item("Астра", "123", R.drawable.aster));
-        mItemList.add(new Item("Пион", "200", R.drawable.peony));
-        mItemList.add(new Item("Роза", "200", R.drawable.rose));
-        mItemList.add(new Item("Подсолнух", "200", R.drawable.sunflower));
-        mItemList.add(new Item("Тюльпан", "200", R.drawable.tulip));
+    @NonNull
+    private List<Item> initializeClassicFlowerList() {
+        final List<Item> items = new ArrayList<>();
+        ((AppCompatActivity) (getActivity())).getSupportActionBar().setTitle(R.string.sub_title_classic);
+        items.add(new Item("Хризантема", "90 \u20BD", R.drawable.chrysanthemum));
+        items.add(new Item("Незабудка", "110 \u20BD", R.drawable.forget_me_not));
+        items.add(new Item("Гербера", "130 \u20BD", R.drawable.gerbera));
+        items.add(new Item("Гладиолус", "200 \u20BD", R.drawable.gladiolus));
+        items.add(new Item("Гиацинт", "100 \u20BD", R.drawable.hyacinth));
+        items.add(new Item("Лилия", "250 \u20BD", R.drawable.lily));
+        items.add(new Item("Ландыш", "200 \u20BD", R.drawable.may_lily));
+        items.add(new Item("Нарцисс", "50 \u20BD", R.drawable.narcissus));
+        items.add(new Item("Орхидея", "1100 \u20BD", R.drawable.orchid));
+        items.add(new Item("Астра", "100 \u20BD", R.drawable.aster));
+        items.add(new Item("Пион", "250 \u20BD", R.drawable.peony));
+        items.add(new Item("Роза", "190 \u20BD", R.drawable.rose));
+        items.add(new Item("Подсолнух", "320 \u20BD", R.drawable.sunflower));
+        items.add(new Item("Тюльпан", "60 \u20BD", R.drawable.tulip));
+        items.add(new Item("Ирис", "170 \u20BD", R.drawable.fleur_de_lis));
+        return items;
     }
 
-    private void initializeOriginFlowerList() {
-        ((AppCompatActivity)(getActivity())).getSupportActionBar().setTitle(R.string.sub_title_original);
-        mItemList.add(new Item("Амарилис", "123", R.drawable.amaryllis));
-        mItemList.add(new Item("Антуриум", "200", R.drawable.anthurium));
-        mItemList.add(new Item("Антирринум", "123", R.drawable.antirrinum));
-        mItemList.add(new Item("Аквиледжия", "200", R.drawable.aquilegia));
-        mItemList.add(new Item("Кампанула", "200", R.drawable.campanula));
-        mItemList.add(new Item("Карнатион", "123", R.drawable.carnation));
-        mItemList.add(new Item("Дельфиниум", "200", R.drawable.delphinium));
-        mItemList.add(new Item("Диантус", "123", R.drawable.dianthus_barbatus));
-        mItemList.add(new Item("Цветок", "137", R.drawable.fleur_de_lis));
-        mItemList.add(new Item("Ранукулюс", "200", R.drawable.ranunculus));
-        mItemList.add(new Item("Галантус", "123", R.drawable.galanthus));
-        mItemList.add(new Item("Гентиан", "137", R.drawable.gentian));
-        mItemList.add(new Item("Гилли", "200", R.drawable.gillyflower));
-        mItemList.add(new Item("Гидра", "200", R.drawable.hydrangea));
-        mItemList.add(new Item("Латур", "200", R.drawable.latyrus));
-        mItemList.add(new Item("Лузиан", "200", R.drawable.lysianthus));
-        mItemList.add(new Item("Мускари", "200", R.drawable.muscari));
-        mItemList.add(new Item("Тумерик", "200", R.drawable.turmeric));
+    private List<Item> initializeOriginFlowerList() {
+        final List<Item> items = new ArrayList<>();
+        ((AppCompatActivity) (getActivity())).getSupportActionBar().setTitle(R.string.sub_title_original);
+        items.add(new Item("Амарилис", "350 \u20BD", R.drawable.amaryllis));
+        items.add(new Item("Аквиледжия", "200 \u20BD", R.drawable.aquilegia));
+        items.add(new Item("Кампанула", "200 \u20BD", R.drawable.campanula));
+        items.add(new Item("Карнатион", "120 \u20BD", R.drawable.carnation));
+        items.add(new Item("Антуриум", "290 \u20BD", R.drawable.anthurium));
+        items.add(new Item("Антирринум", "260 \u20BD", R.drawable.antirrinum));
+        items.add(new Item("Дельфиниум", "345 \u20BD", R.drawable.delphinium));
+        items.add(new Item("Диантус", "120 \u20BD", R.drawable.dianthus_barbatus));
+        items.add(new Item("Ранукулюс", "250 \u20BD", R.drawable.ranunculus));
+        items.add(new Item("Галантус", "550 \u20BD", R.drawable.galanthus));
+        items.add(new Item("Гентиан", "320 \u20BD", R.drawable.gentian));
+        items.add(new Item("Гилли", "390 \u20BD", R.drawable.gillyflower));
+        items.add(new Item("Гидра", "350 \u20BD", R.drawable.hydrangea));
+        items.add(new Item("Латур", "250 \u20BD", R.drawable.latyrus));
+        items.add(new Item("Лузиан", "220 \u20BD", R.drawable.lysianthus));
+        items.add(new Item("Мускари", "300 \u20BD", R.drawable.muscari));
+        items.add(new Item("Тумерик", "250 \u20BD", R.drawable.turmeric));
+        return items;
     }
 
-    private void initializeRoundBouquetList() {
-        ((AppCompatActivity)(getActivity())).getSupportActionBar().setTitle(R.string.sub_title_round_bouquet);
-        mItemList.add(new Item("Круглый букет 1", "123", R.drawable.round_bouquet));
-        mItemList.add(new Item("Круглый букет 2", "123", R.drawable.round_bouquet_2));
-        mItemList.add(new Item("Круглый букет 3", "123", R.drawable.round_bouquet_3));
-        mItemList.add(new Item("Круглый букет 4", "123", R.drawable.round_bouquet_4));
-        mItemList.add(new Item("Круглый букет 5", "123", R.drawable.round_bouquet_5));
-        mItemList.add(new Item("Круглый букет 6", "123", R.drawable.round_bouquet_6));
-        mItemList.add(new Item("Круглый букет 7", "123", R.drawable.round_bouquet_7));
-        mItemList.add(new Item("Круглый букет 8", "123", R.drawable.round_bouquet_8));
+    private List<Item> initializeRoundBouquetList() {
+        final List<Item> items = new ArrayList<>();
+        ((AppCompatActivity) (getActivity())).getSupportActionBar().setTitle(R.string.sub_title_round_bouquet);
+        items.add(new Item("Феерия чувств", "3390 \u20BD", R.drawable.round_bouquet_1));
+        items.add(new Item("Волшебство природы", "5520 \u20BD", R.drawable.round_bouquet_2));
+        items.add(new Item("Седьмое небо", "3780 \u20BD", R.drawable.round_bouquet_3));
+        items.add(new Item("Яркая фантазия", "4280 \u20BD", R.drawable.round_bouquet_4));
+        items.add(new Item("Жемчужина", "3290 \u20BD", R.drawable.round_bouquet_5));
+        items.add(new Item("Шарлотта", "3770 \u20BD", R.drawable.round_bouquet_6));
+        items.add(new Item("Розовая пантера", "2890 \u20BD", R.drawable.round_bouquet_7));
+        items.add(new Item("Весеннее настроение", "4120 \u20BD", R.drawable.round_bouquet_8));
+        return items;
     }
 
-    private void initializeVerticalBouquetList() {
-        ((AppCompatActivity)(getActivity())).getSupportActionBar().setTitle(R.string.sub_title_vertical_bouquet);
-        mItemList.add(new Item("Вертикальный букет 2", "123", R.drawable.vertical_bouquet_2));
-        mItemList.add(new Item("Вертикальный букет 3", "123", R.drawable.vertical_bouquet_3));
-        mItemList.add(new Item("Вертикальный букет 4", "123", R.drawable.vertical_bouquet_4));
-        mItemList.add(new Item("Вертикальный букет 5", "123", R.drawable.vertical_bouquet_5));
-        mItemList.add(new Item("Вертикальный букет 6", "123", R.drawable.vertical_bouquet_6));
-        mItemList.add(new Item("Вертикальный букет 7", "123", R.drawable.vertical_bouquet_7));
+    private List<Item> initializeVerticalBouquetList() {
+        final List<Item> items = new ArrayList<>();
+        ((AppCompatActivity) (getActivity())).getSupportActionBar().setTitle(R.string.sub_title_vertical_bouquet);
+        items.add(new Item("История любви", "5800 \u20BD", R.drawable.vertical_bouquet_2));
+        items.add(new Item("Капелька счастья", "4520 \u20BD", R.drawable.vertical_bouquet_3));
+        items.add(new Item("Исполняющий желания", "3780 \u20BD", R.drawable.vertical_bouquet_4));
+        items.add(new Item("Кремовое настроение", "5400 \u20BD", R.drawable.vertical_bouquet_5));
+        items.add(new Item("Ласточка", "3500 \u20BD", R.drawable.vertical_bouquet_6));
+        items.add(new Item("Лунный букет", "4230 \u20BD", R.drawable.vertical_bouquet_7));
+        return items;
     }
 
-    private void initializeOriginBouquetList() {
-        ((AppCompatActivity)(getActivity())).getSupportActionBar().setTitle(R.string.sub_title_original_bouquet);
-        mItemList.add(new Item("Оригинальный букет 1", "137", R.drawable.original_bouquets));
-        mItemList.add(new Item("Оригинальный букет 2", "137", R.drawable.original_bouquets_2));
-        mItemList.add(new Item("Оригинальный букет 3", "137", R.drawable.original_bouquets_3));
-        mItemList.add(new Item("Оригинальный букет 4", "137", R.drawable.original_bouquets_4));
-        mItemList.add(new Item("Оригинальный букет 5", "137", R.drawable.original_bouquets_5));
-        mItemList.add(new Item("Оригинальный букет 6", "137", R.drawable.original_bouquets_6));
-        mItemList.add(new Item("Оригинальный букет 7", "137", R.drawable.original_bouquets_7));
-        mItemList.add(new Item("Оригинальный букет 8", "123", R.drawable.dutch_bouquets_2));
-        mItemList.add(new Item("Оригинальный букет 9", "137", R.drawable.dutch_bouquets_3));
-        mItemList.add(new Item("Оригинальный букет 10", "200", R.drawable.dutch_bouquets_4));
-        mItemList.add(new Item("Оригинальный букет 11", "123", R.drawable.dutch_bouquets_5));
+    private List<Item> initializeOriginBouquetList() {
+        final List<Item> items = new ArrayList<>();
+        ((AppCompatActivity) (getActivity())).getSupportActionBar().setTitle(R.string.sub_title_original_bouquet);
+        items.add(new Item("Нежнее нежного", "5120 \u20BD", R.drawable.original_bouquets));
+        items.add(new Item("Новогоднее настроение", "4080 \u20BD", R.drawable.original_bouquets_2));
+        items.add(new Item("Красота природы", "5100 \u20BD", R.drawable.original_bouquets_3));
+        items.add(new Item("Нежные чувства", "2500 \u20BD", R.drawable.original_bouquets_4));
+        items.add(new Item("Муза", "3150 \u20BD", R.drawable.original_bouquets_5));
+        items.add(new Item("Яркое лето", "3700 \u20BD", R.drawable.original_bouquets_6));
+        items.add(new Item("Розовая сказка", "2600 \u20BD", R.drawable.original_bouquets_7));
+        items.add(new Item("Сладкое утро", "4900 \u20BD", R.drawable.dutch_bouquets_2));
+        items.add(new Item("Солнечный свет", "4500 \u20BD", R.drawable.dutch_bouquets_3));
+        items.add(new Item("Сияние", "4780 \u20BD", R.drawable.dutch_bouquets_4));
+        items.add(new Item("Маленькая Леди", "3780 \u20BD", R.drawable.dutch_bouquets_5));
+        return items;
     }
 
-    private void initializeFlowerBasketList() {
-        ((AppCompatActivity)(getActivity())).getSupportActionBar().setTitle(R.string.sub_title_flower_basket);
-        mItemList.add(new Item("Цветочная корзина 2", "123", R.drawable.flower_basket_2));
-        mItemList.add(new Item("Цветочная корзина 3", "137", R.drawable.flower_basket_3));
-        mItemList.add(new Item("Цветочная корзина 4", "200", R.drawable.flower_basket_4));
-        mItemList.add(new Item("Цветочная корзина 5", "123", R.drawable.flower_basket_5));
-        mItemList.add(new Item("Цветочная корзина 6", "137", R.drawable.flower_basket_6));
-        mItemList.add(new Item("Цветочная корзина 7", "137", R.drawable.flower_basket_7));
-        mItemList.add(new Item("Цветочная корзина 8", "137", R.drawable.flower_basket_8));
-        mItemList.add(new Item("Цветочная корзина 9", "137", R.drawable.flower_basket_9));
-        mItemList.add(new Item("Цветочная корзина 10", "137", R.drawable.flower_basket_10));
+    private List<Item> initializeFlowerBasketList() {
+        final List<Item> items = new ArrayList<>();
+        ((AppCompatActivity) (getActivity())).getSupportActionBar().setTitle(R.string.sub_title_flower_basket);
+        items.add(new Item("Нежное прикосновение", "4120 \u20BD", R.drawable.flower_basket_2));
+        items.add(new Item("Вдохновение", "3780 \u20BD", R.drawable.flower_basket_3));
+        items.add(new Item("Белые ночи", "3980 \u20BD", R.drawable.flower_basket_4));
+        items.add(new Item("Вальс цветов", "4500 \u20BD", R.drawable.flower_basket_5));
+        items.add(new Item("Воздушные мечты", "3100 \u20BD", R.drawable.flower_basket_6));
+        items.add(new Item("Яркая вспышка", "4500 \u20BD", R.drawable.flower_basket_7));
+        items.add(new Item("Ягодный десерт", "5000 \u20BD", R.drawable.flower_basket_8));
+        items.add(new Item("Робкая надежда", "3970 \u20BD", R.drawable.flower_basket_9));
+        items.add(new Item("Мелодия чувств", "3500 \u20BD", R.drawable.flower_basket_10));
+        return items;
     }
 
-    private void initializeHousePlantList() {
-        ((AppCompatActivity)(getActivity())).getSupportActionBar().setTitle(R.string.sub_title_house_plant);
-        mItemList.add(new Item("Амариллис", "123", R.drawable.hp_amaryllis));
-        mItemList.add(new Item("Антуриум", "137", R.drawable.hp_anthurium));
-        mItemList.add(new Item("Араукария", "200", R.drawable.hp_araucaria));
-        mItemList.add(new Item("Асплениум", "123", R.drawable.hp_asplenium));
-        mItemList.add(new Item("Азалия", "137", R.drawable.hp_azalea));
-        mItemList.add(new Item("Бегония", "200", R.drawable.hp_begonia));
-        mItemList.add(new Item("Каламондин", "123", R.drawable.hp_calamondin));
-        mItemList.add(new Item("Калатея", "137", R.drawable.hp_calathea));
-        mItemList.add(new Item("Лимон", "200", R.drawable.hp_citrus));
-        mItemList.add(new Item("Кливия", "123", R.drawable.hp_clivia));
-        mItemList.add(new Item("Кодиеум", "137", R.drawable.hp_codiaeum));
-        mItemList.add(new Item("Крассула", "200", R.drawable.hp_crassula));
-        mItemList.add(new Item("Артишок", "123", R.drawable.hp_cynara));
-        mItemList.add(new Item("Орхидея Дендробиум ", "137", R.drawable.hp_dendrobium_nobile));
-        mItemList.add(new Item("Дипладения", "123", R.drawable.hp_dipladenia));
-        mItemList.add(new Item("Гибискус", "200", R.drawable.hp_hibiscus));
-        mItemList.add(new Item("Каланхоэ", "200", R.drawable.hp_kalanchoe));
-        mItemList.add(new Item("Нарцисс", "200", R.drawable.hp_narcissus));
-        mItemList.add(new Item("Нертера", "200", R.drawable.hp_nertera));
-        mItemList.add(new Item("Орхидея Онцидиум", "200", R.drawable.hp_oncidium));
+    private List<Item> initializeHousePlantList() {
+        final List<Item> items = new ArrayList<>();
+        ((AppCompatActivity) (getActivity())).getSupportActionBar().setTitle(R.string.sub_title_house_plant);
+        items.add(new Item("Амариллис", "330 \u20BD", R.drawable.hp_amaryllis));
+        items.add(new Item("Антуриум", "1050 \u20BD", R.drawable.hp_anthurium));
+        items.add(new Item("Араукария", "560 \u20BD", R.drawable.hp_araucaria));
+        items.add(new Item("Асплениум", "540 \u20BD", R.drawable.hp_asplenium));
+        items.add(new Item("Азалия", "470 \u20BD", R.drawable.hp_azalea));
+        items.add(new Item("Бегония", "300 \u20BD", R.drawable.hp_begonia));
+        items.add(new Item("Каламондин", "1500 \u20BD", R.drawable.hp_calamondin));
+        items.add(new Item("Калатея", "900 \u20BD", R.drawable.hp_calathea));
+        items.add(new Item("Лимон", "1700 \u20BD", R.drawable.hp_citrus));
+        items.add(new Item("Кливия", "1100 \u20BD", R.drawable.hp_clivia));
+        items.add(new Item("Кодиеум", "500 \u20BD", R.drawable.hp_codiaeum));
+        items.add(new Item("Крассула", "450 \u20BD", R.drawable.hp_crassula));
+        items.add(new Item("Артишок", "900 \u20BD", R.drawable.hp_cynara));
+        items.add(new Item("Орхидея Дендробиум ", "1100 \u20BD", R.drawable.hp_dendrobium_nobile));
+        items.add(new Item("Дипладения", "500 \u20BD", R.drawable.hp_dipladenia));
+        items.add(new Item("Гибискус", "380 \u20BD", R.drawable.hp_hibiscus));
+        items.add(new Item("Каланхоэ", "600 \u20BD", R.drawable.hp_kalanchoe));
+        items.add(new Item("Нарцисс", "550 \u20BD", R.drawable.hp_narcissus));
+        items.add(new Item("Нертера", "400 \u20BD", R.drawable.hp_nertera));
+        items.add(new Item("Орхидея Онцидиум", "1500 \u20BD", R.drawable.hp_oncidium));
+        return items;
     }
 
-    private void initializeOpenSoilPlantList() {
-        ((AppCompatActivity)(getActivity())).getSupportActionBar().setTitle(R.string.sub_title_open_soil);
-        mItemList.add(new Item("Калиброхия", "123", R.drawable.os_calibrochia));
-        mItemList.add(new Item("Кампанула", "137", R.drawable.os_campanula));
-        mItemList.add(new Item("Хризантема", "200", R.drawable.os_chrysanthemum));
-        mItemList.add(new Item("Кизил цветущий", "123", R.drawable.os_cornus_florida));
-        mItemList.add(new Item("Купрессус Голдкрест", "137", R.drawable.os_cupressus_goldcrest));
-        mItemList.add(new Item("Гайлардия", "200", R.drawable.os_gaillardia));
-        mItemList.add(new Item("Вереск", "123", R.drawable.os_heather));
-        mItemList.add(new Item("Гортензия", "137", R.drawable.os_hydrangea));
-        mItemList.add(new Item("Лаванда", "200", R.drawable.os_lavender));
-        mItemList.add(new Item("Мускари", "137", R.drawable.os_muscari));
-        mItemList.add(new Item("Орнитогалум", "200", R.drawable.os_ornithogalum));
-        mItemList.add(new Item("Остеоспермум", "123", R.drawable.os_osteospermum));
-        mItemList.add(new Item("Петуния", "137", R.drawable.os_petunia));
-        mItemList.add(new Item("Чубушник", "200", R.drawable.os_philadelphus));
-        mItemList.add(new Item("Пицея Пунгенс Глаука", "123", R.drawable.os_picea_pungens_glauca));
-        mItemList.add(new Item("Роза", "137", R.drawable.os_rose_soil));
-        mItemList.add(new Item("Ива", "200", R.drawable.os_salix));
-        mItemList.add(new Item("Подсолнух", "200", R.drawable.os_sunflower_soil));
+    private List<Item> initializeOpenSoilPlantList() {
+        final List<Item> items = new ArrayList<>();
+        ((AppCompatActivity) (getActivity())).getSupportActionBar().setTitle(R.string.sub_title_open_soil);
+        items.add(new Item("Калиброхия", "500 \u20BD", R.drawable.os_calibrochia));
+        items.add(new Item("Кампанула", "660 \u20BD", R.drawable.os_campanula));
+        items.add(new Item("Хризантема", "360 \u20BD", R.drawable.os_chrysanthemum));
+        items.add(new Item("Кизил цветущий", "200 \u20BD", R.drawable.os_cornus_florida));
+        items.add(new Item("Купрессус Голдкрест", "460 \u20BD", R.drawable.os_cupressus_goldcrest));
+        items.add(new Item("Гайлардия", "500 \u20BD", R.drawable.os_gaillardia));
+        items.add(new Item("Вереск", "600 \u20BD", R.drawable.os_heather));
+        items.add(new Item("Гортензия", "1300 \u20BD", R.drawable.os_hydrangea));
+        items.add(new Item("Лаванда", "700 \u20BD", R.drawable.os_lavender));
+        items.add(new Item("Мускари", "270 \u20BD", R.drawable.os_muscari));
+        items.add(new Item("Орнитогалум", "420 \u20BD", R.drawable.os_ornithogalum));
+        items.add(new Item("Остеоспермум", "300 \u20BD", R.drawable.os_osteospermum));
+        items.add(new Item("Петуния", "450 \u20BD", R.drawable.os_petunia));
+        items.add(new Item("Чубушник", "1300 \u20BD", R.drawable.os_philadelphus));
+        items.add(new Item("Пицея Пунгенс Глаука", "850 \u20BD", R.drawable.os_picea_pungens_glauca));
+        items.add(new Item("Роза", "700 \u20BD", R.drawable.os_rose_soil));
+        items.add(new Item("Ива", "900 \u20BD", R.drawable.os_salix));
+        items.add(new Item("Подсолнух", "950 \u20BD", R.drawable.os_sunflower_soil));
+        return items;
     }
 }
