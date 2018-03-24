@@ -30,8 +30,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private ActionBarDrawerToggle mActionBarDrawerToggle;
     private long back_pressed;
 
-    @OnClick({R.id.btn_main})
-
     @Override
     public void onBackPressed() {
         if (back_pressed + 2000 > System.currentTimeMillis()) {
