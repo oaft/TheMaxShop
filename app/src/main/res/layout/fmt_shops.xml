@@ -2,15 +2,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:background="@color/colorWhite">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <fragment
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:text="@string/mi_our_shops"
-        android:id="@+id/textView" />
+        android:id="@+id/map"
+        tools:context= "com.example.inquallity.themaxshop.activity.MainActivity"/>
+
 
     <ImageView
         android:layout_width="wrap_content"

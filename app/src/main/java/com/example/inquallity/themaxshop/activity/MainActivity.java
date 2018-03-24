@@ -18,6 +18,12 @@ import com.example.inquallity.themaxshop.fragment.CatalogFragment;
 import com.example.inquallity.themaxshop.fragment.MainFragment;
 import com.example.inquallity.themaxshop.fragment.ShopsFragment;
 import com.example.inquallity.themaxshop.fragment.WeatherFragment;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import butterknife.BindView;
 import butterknife.OnClick;
