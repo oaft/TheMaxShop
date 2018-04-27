@@ -1,6 +1,6 @@
 package com.example.inquallity.themaxshop.fragment;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -82,7 +82,7 @@ public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCa
 
     @Override
     public void onCardClick(View view, String title, String imgUrl, String price) {
-        Fragment fragment = new ItemFragment();
+        android.support.v4.app.Fragment fragment = new ItemFragment();
         Bundle bundle = new Bundle();
         bundle.putString("KEY_TITLE", title);
         bundle.putString("KEY_IMG_RES", imgUrl);

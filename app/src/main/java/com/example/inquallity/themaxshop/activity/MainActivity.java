@@ -1,6 +1,6 @@
 package com.example.inquallity.themaxshop.activity;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -61,11 +61,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 getSupportActionBar().setTitle(R.string.mi_catalog);
                 break;
             case R.id.mi_shops:
-                targetFragment = new ShopsFragment();
+                targetFragment = new AboutShopFragment();
                 getSupportActionBar().setTitle(R.string.mi_our_shops);
                 break;
             case R.id.mi_weather:
-                targetFragment = new WeatherFragment();
+                targetFragment = new AboutShopFragment();
                 getSupportActionBar().setTitle(R.string.mi_weather);
                 break;
             case R.id.mi_main:
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         if (targetFragment != null){
-            getFragmentManager().beginTransaction()
+            getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fl_content, targetFragment)
                     .commit();
         }
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mDrawerLayout.addDrawerListener(mActionBarDrawerToggle);
 
         Fragment fragment = new MainFragment();
-        getFragmentManager().beginTransaction()
+        getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fl_content, fragment)
                 .commit();
     }

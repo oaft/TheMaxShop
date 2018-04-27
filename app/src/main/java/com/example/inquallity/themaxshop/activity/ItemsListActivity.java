@@ -47,9 +47,9 @@ public class ItemsListActivity extends AppCompatActivity {
         final Bundle extras = getIntent().getExtras();
         final Bundle extras2 = new Bundle();
         extras2.putInt("LIST_NUMBER", extras.getInt("LIST_NUMBER"));
-        Fragment fragment = new ItemsListFragment();
+        android.support.v4.app.Fragment fragment = new ItemsListFragment();
         fragment.setArguments(extras2);
-        getFragmentManager().beginTransaction()
+        getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fl_items_list_content, fragment)
                 .commit();
     }

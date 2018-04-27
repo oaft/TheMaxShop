@@ -26,7 +26,7 @@ import butterknife.Unbinder;
  * Created by Inquallity on 05-Feb-18.
  */
 
-public class ItemFragment extends Fragment {
+public class ItemFragment extends android.support.v4.app.Fragment {
 
     @BindView(R.id.iv_item_image) ImageView mItemImage;
     @BindView(R.id.tv_price_view) TextView mItemPrice;

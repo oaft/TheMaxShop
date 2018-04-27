@@ -21,7 +21,7 @@ import butterknife.Unbinder;
  * @author Olga Aleksandrova on 03.02.2018.
  */
 
-public class CatalogFragment extends Fragment {
+public class CatalogFragment extends android.support.v4.app.Fragment {
 
     private Unbinder unbinder;
 

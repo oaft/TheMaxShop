@@ -13,7 +13,7 @@ import com.example.inquallity.themaxshop.R;
  * Created by Inquallity on 19-Dec-17.
  */
 
-public class AboutShopFragment extends Fragment {
+public class AboutShopFragment extends android.support.v4.app.Fragment {
 
     @Nullable
     @Override
