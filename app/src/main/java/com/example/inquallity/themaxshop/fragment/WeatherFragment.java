@@ -1,9 +1,10 @@
 package com.example.inquallity.themaxshop.fragment;
 
-import android.app.Fragment;
-import android.content.Loader;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.LoaderManager;
+import android.support.v4.content.Loader;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -103,17 +104,17 @@ public class WeatherFragment extends Fragment {
     @OnClick(R.id.btnProceed)
     void onProceedClick() {
         Log.d("LOG_TAG", "btnProceed was push");
-               getLoaderManager().restartLoader(R.id.weather_loader, Bundle.EMPTY, new WeatherLoaderCallbacks());
+        getLoaderManager().restartLoader(R.id.weather_loader, Bundle.EMPTY, new WeatherLoaderCallbacks());
     }
 
-    private class WeatherLoaderCallbacks implements android.app.LoaderManager.LoaderCallbacks<City> {
+    private class WeatherLoaderCallbacks implements LoaderManager.LoaderCallbacks<City> {
         @Override
         public Loader<City> onCreateLoader(int id, Bundle args) {
             return new ApiDataLoader(getActivity(), mRetrofit.create(WeatherApi.class), mEditTextCityName);
         }
 
         @Override
-        public void onLoadFinished(Loader<City> loader, City data) {
+        public void onLoadFinished(android.support.v4.content.Loader<City> loader, City data) {
             if (data != null) {
                 proceedCity(data);
             } else {
@@ -122,9 +123,10 @@ public class WeatherFragment extends Fragment {
         }
 
         @Override
-        public void onLoaderReset(Loader<City> loader) {
+        public void onLoaderReset(android.support.v4.content.Loader<City> loader) {
 
         }
+
     }
 }
 

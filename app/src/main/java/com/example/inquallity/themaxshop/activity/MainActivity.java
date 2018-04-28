@@ -61,11 +61,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 getSupportActionBar().setTitle(R.string.mi_catalog);
                 break;
             case R.id.mi_shops:
-                targetFragment = new AboutShopFragment();
+                targetFragment = new ShopsFragment();
                 getSupportActionBar().setTitle(R.string.mi_our_shops);
                 break;
             case R.id.mi_weather:
-                targetFragment = new AboutShopFragment();
+                targetFragment = new WeatherFragment();
                 getSupportActionBar().setTitle(R.string.mi_weather);
                 break;
             case R.id.mi_main:

@@ -1,14 +1,12 @@
 package com.example.inquallity.themaxshop.fragment;
 
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
+import android.text.TextUtils;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,13 +14,11 @@ import android.view.ViewGroup;
 
 import com.example.inquallity.themaxshop.R;
 import com.example.inquallity.themaxshop.adapter.ItemsListAdapter;
+import com.example.inquallity.themaxshop.loader.AssetLoader;
 import com.example.inquallity.themaxshop.model.Item;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.Collections;
 import java.util.List;
 
@@ -37,7 +33,8 @@ import butterknife.Unbinder;
 public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCardClickListener {
 
     private static SparseArray<String> sAssets = new SparseArray<>();
-//путь к файлу для каждой позиции
+
+    //путь к файлу для каждой позиции
     static {
         sAssets.put(1, "flowers/classic.json");
         sAssets.put(2, "flowers/original.json");
@@ -72,7 +69,7 @@ public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCa
 
         final List<Item> items = loadFromAsset(i);
 
-        mItemsListAdapter = new ItemsListAdapter(getActivity().getAssets());
+        mItemsListAdapter = new ItemsListAdapter(getActivity());
         mLayoutManager = new LinearLayoutManager(view.getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
         mItemsListAdapter.setOnCardClickListener(this);
@@ -110,19 +107,26 @@ public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCa
 
     @NonNull
     private List<Item> loadFromAsset(int position) {
-        final String path = sAssets.get(position);
-        try {
-            // открывает файл из папки ассет по указанному пути
-            final InputStream is = getActivity().getAssets().open(path);
-            final Gson gson = new Gson();
-            final InputStreamReader isr = new InputStreamReader(is);
-            //говорит gson сделать чтот из json
-            return gson.fromJson(isr, new TypeToken<List<Item>>() {
+        final String json = new AssetLoader(getActivity()).readJson(sAssets.get(position));
+        if (!TextUtils.isEmpty(json)) {
+            return new Gson().fromJson(json, new TypeToken<List<Item>>() {
             }.getType());
-        } catch (IOException e) {
-            Log.e("ERROR_LOG", e.getMessage(), e);
+        } else {
+            return Collections.emptyList();
         }
-        return Collections.emptyList();
+//        new AssetLoader().readJson(sAssets.get(position), getActivity().getAssets());
+//        final String path = sAssets.get(position).trim();
+//        try {
+//            // открывает файл из папки ассет по указанному пути
+//            final InputStream is = getActivity().getAssets().open(path);
+//            final Gson gson = new Gson();
+//            final InputStreamReader isr = new InputStreamReader(is);
+//            //говорит gson сделать чтот из json
+//            return gson.fromJson(isr, new TypeToken<List<Item>>() {
+//            }.getType());
+//        } catch (IOException e) {
+//            Log.e("ERROR_LOG", e.getMessage(), e);
+//        }
     }
 
 //    @NonNull

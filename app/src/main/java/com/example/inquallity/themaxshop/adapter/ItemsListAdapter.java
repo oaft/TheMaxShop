@@ -1,18 +1,19 @@
 package com.example.inquallity.themaxshop.adapter;
 
+import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.inquallity.themaxshop.R;
+import com.example.inquallity.themaxshop.loader.AssetLoader;
 import com.example.inquallity.themaxshop.model.Item;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,10 +25,11 @@ public class ItemsListAdapter extends RecyclerView.Adapter<ItemViewHolder> {
 
     private OnCardClickListener mListener;
     private List<Item> mItemList = new ArrayList<>();
-    private AssetManager mAssetManager;
+    private AssetLoader mAssetLoader;
 
-    public ItemsListAdapter(AssetManager assetManager) {
-        mAssetManager = assetManager;
+
+    public ItemsListAdapter(Context context) {
+       mAssetLoader = new AssetLoader(context);
     }
 
     public void setOnCardClickListener(OnCardClickListener listener) {
@@ -46,23 +48,35 @@ public class ItemsListAdapter extends RecyclerView.Adapter<ItemViewHolder> {
         holder.setOnCardClickListener(mListener);
         final Item item = mItemList.get(position);
         holder.bindItem(item);
-        //
-        InputStream is = null;
-        try {
-            is = mAssetManager.open(item.getImageUrl());
-            final Bitmap bitmap = BitmapFactory.decodeStream(is);
-            holder.bindImage(bitmap);
-        } catch (IOException e) {
-            //log
-        } finally {
-            if (is != null){
-                try {
-                    is.close();
-                } catch (IOException e) {
-                    //log
-                }
-            }
-        }
+
+
+        Bitmap bitmap = mAssetLoader.loadImage(item.getImageUrl());
+        holder.bindImage(bitmap);
+
+//        try {
+//            Bitmap bitmap = new AssetLoader().loadImage(item.getImageUrl(), mAssetManager);
+//            holder.bindImage(bitmap);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+
+
+//        InputStream is = null;
+//        try {
+//            is = mAssetManager.open(item.getImageUrl().trim());
+//            final Bitmap bitmap = BitmapFactory.decodeStream(is);
+//            holder.bindImage(bitmap);
+//        } catch (IOException e) {
+//            //log
+//        } finally {
+//            if (is != null){
+//                try {
+//                    is.close();
+//                } catch (IOException e) {
+//                    //log
+//                }
+//            }
+//        }
     }
 
     @Override

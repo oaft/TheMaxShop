@@ -42,9 +42,9 @@ public class MainFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         mUnbinder = ButterKnife.bind(this, view);
 
-        mPagesCollectionArrayList.add(R.drawable.pager_main_autor_bouquet_101);
-        mPagesCollectionArrayList.add(R.drawable.pager_main_tulpany_2);
-        mPagesCollectionArrayList.add(R.drawable.pager_main_roses_3);
+        mPagesCollectionArrayList.add(R.drawable.pager_main_autor_bouquet_102);
+        mPagesCollectionArrayList.add(R.drawable.pager_main_tulpany_302);
+        mPagesCollectionArrayList.add(R.drawable.pager_main_roses_202);
 
         AdvertisingPageAdapter advertisingPageAdapter = new AdvertisingPageAdapter(getActivity().getSupportFragmentManager());
         advertisingPageAdapter.setPagesCollection(mPagesCollectionArrayList);

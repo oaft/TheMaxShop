@@ -1,7 +1,7 @@
 package com.example.inquallity.themaxshop.loader;
 
-import android.content.AsyncTaskLoader;
 import android.content.Context;
+import android.support.v4.content.AsyncTaskLoader;
 import android.widget.EditText;
 
 import com.example.inquallity.themaxshop.api.WeatherApi;
