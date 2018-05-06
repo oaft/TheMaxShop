@@ -16,10 +16,11 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 /**
- * Created by Inquallity on 19-Dec-17.
+ * Created by Olga Aleksandrova on 19-Dec-17.
  */
 
 public class ShopsFragment extends Fragment implements OnMapReadyCallback {
+
     private MapView mMapView;
     private GoogleMap mMap;
 

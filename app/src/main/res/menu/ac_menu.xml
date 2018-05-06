@@ -17,11 +17,6 @@
         android:title="@string/mi_our_shops"/>
 
     <item
-        android:id="@+id/mi_weather"
-        android:icon="@drawable/ic_beach_access_black_24dp"
-        android:title="@string/mi_weather"/>
-
-    <item
         android:id="@+id/mi_about_us"
         android:icon="@drawable/ic_local_florist_black_24dp"
         android:title="@string/mi_about_shop"/>

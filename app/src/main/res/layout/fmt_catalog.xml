@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back_catalog5">
+    android:background="@drawable/background_catalog">
 
 
     <LinearLayout
@@ -126,7 +126,7 @@
             android:layout_width="@dimen/dp_50"
             android:layout_height="@dimen/dp_50"
             android:contentDescription="@string/product_picture"
-            android:src="@drawable/ic_plant3"/>
+            android:src="@drawable/ic_plant"/>
 
         <TextView
             android:layout_width="wrap_content"

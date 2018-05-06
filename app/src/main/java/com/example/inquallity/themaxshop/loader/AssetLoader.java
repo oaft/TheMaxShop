@@ -14,7 +14,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 /**
- * Created by Inquallity on 28-Apr-18.
+ * Created by Olga Aleksandrova on 28-Apr-18.
  */
 
 public class AssetLoader {

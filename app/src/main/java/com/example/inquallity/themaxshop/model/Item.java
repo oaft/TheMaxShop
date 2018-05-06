@@ -8,12 +8,9 @@ import com.google.gson.annotations.SerializedName;
 
 public class Item {
 
-    @SerializedName("title")
-    private String mTitle;
-    @SerializedName("price")
-    private String mPrice;
-    @SerializedName("image_url")
-    private String mImageUrl;
+    @SerializedName("title") private String mTitle;
+    @SerializedName("price") private String mPrice;
+    @SerializedName("image_url") private String mImageUrl;
 
     public String getTitle() {
         return mTitle;

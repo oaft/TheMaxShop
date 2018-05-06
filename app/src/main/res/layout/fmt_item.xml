@@ -12,7 +12,7 @@
         android:layout_height="@dimen/dp_300"
         android:layout_gravity="center"
         android:adjustViewBounds="true"
-        android:layout_margin="@dimen/dp_4"
+        android:layout_marginTop="@dimen/dp_72"
         android:contentDescription="@string/product_picture" />
 
     <TextView
@@ -20,9 +20,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="@dimen/dp_4"
+        android:layout_margin="@dimen/dp_32"
         android:gravity="center"
-        android:text="@string/example"
         android:textColor="@color/colorAccent"
         android:textSize="@dimen/sp_20" />
 

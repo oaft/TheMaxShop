@@ -6,27 +6,23 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import com.example.inquallity.themaxshop.R;
 import com.example.inquallity.themaxshop.adapter.AdvertisingPageAdapter;
-
-import java.util.zip.Inflater;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
- * Created by Inquallity on 27-Apr-18.
+ * Created by Olga Aleksandrova on 27-Apr-18.
  */
 
 public class AdvertisingFragment extends Fragment {
 
-    @BindView(R.id.iv_advertising)
-    ImageView mImageView;
-    private Unbinder unbinder;
+    @BindView(R.id.iv_advertising) ImageView mImageView;
+    private Unbinder mUnbinder;
 
     @Nullable
     @Override
@@ -37,7 +33,7 @@ public class AdvertisingFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        unbinder = ButterKnife.bind(this, view);
+        mUnbinder = ButterKnife.bind(this, view);
     }
 
     @Override
@@ -50,6 +46,6 @@ public class AdvertisingFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        unbinder.unbind();
+        mUnbinder.unbind();
     }
 }

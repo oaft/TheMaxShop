@@ -1,9 +1,7 @@
 package com.example.inquallity.themaxshop.adapter;
 
 import android.content.Context;
-import android.content.res.AssetManager;
 import android.graphics.Bitmap;
-import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +11,6 @@ import com.example.inquallity.themaxshop.R;
 import com.example.inquallity.themaxshop.loader.AssetLoader;
 import com.example.inquallity.themaxshop.model.Item;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +23,6 @@ public class ItemsListAdapter extends RecyclerView.Adapter<ItemViewHolder> {
     private OnCardClickListener mListener;
     private List<Item> mItemList = new ArrayList<>();
     private AssetLoader mAssetLoader;
-
 
     public ItemsListAdapter(Context context) {
        mAssetLoader = new AssetLoader(context);

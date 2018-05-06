@@ -27,7 +27,7 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
- * Created by Inquallity on 05-Feb-18.
+ * Created by Olga Aleksandrova on 05-Feb-18.
  */
 
 public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCardClickListener {
@@ -46,12 +46,11 @@ public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCa
         sAssets.put(8, "flowers/open_soil_plant.json");
     }
 
-    @BindView(R.id.rv_list_item)
-    RecyclerView mRecyclerView;
+    @BindView(R.id.rv_list_item) RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
     private ItemsListAdapter mItemsListAdapter;
 
-    private Unbinder unbinder;
+    private Unbinder mUnbinder;
 
     @Nullable
     @Override
@@ -62,7 +61,7 @@ public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCa
     @Override
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        unbinder = ButterKnife.bind(this, view);
+        mUnbinder = ButterKnife.bind(this, view);
 
         final Bundle bundle = this.getArguments();
         int i = bundle.getInt("LIST_NUMBER");
@@ -102,7 +101,7 @@ public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCa
     @Override
     public void onDestroy() {
         super.onDestroy();
-        unbinder.unbind();
+        mUnbinder.unbind();
     }
 
     @NonNull

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Inquallity on 27-Apr-18.
+ * @author Olga Aleksandrova on 27-Apr-18.
  */
 
 public class AdvertisingPageAdapter extends FragmentStatePagerAdapter {

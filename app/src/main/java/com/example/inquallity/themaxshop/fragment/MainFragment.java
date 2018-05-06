@@ -2,13 +2,11 @@ package com.example.inquallity.themaxshop.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.Fragment;
 
 import com.example.inquallity.themaxshop.R;
 import com.example.inquallity.themaxshop.adapter.AdvertisingPageAdapter;
@@ -20,15 +18,14 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
- * Created by Inquallity on 19-Feb-18.
+ * Created by Olga Aleksandrova on 19-Feb-18.
  */
 
 public class MainFragment extends Fragment {
 
     ArrayList<Integer> mPagesCollectionArrayList = new ArrayList(3);
 
-    @BindView(R.id.view_pager_main)
-    ViewPager mViewPager;
+    @BindView(R.id.view_pager_main) ViewPager mViewPager;
     private Unbinder mUnbinder;
 
     @Nullable

@@ -1,6 +1,5 @@
 package com.example.inquallity.themaxshop.fragment;
 
-import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,7 +11,6 @@ import android.widget.TextView;
 import com.example.inquallity.themaxshop.R;
 import com.example.inquallity.themaxshop.activity.ItemsListActivity;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
@@ -23,7 +21,7 @@ import butterknife.Unbinder;
 
 public class CatalogFragment extends android.support.v4.app.Fragment {
 
-    private Unbinder unbinder;
+    private Unbinder mUnbinder;
 
     @Nullable
     @Override
@@ -34,7 +32,7 @@ public class CatalogFragment extends android.support.v4.app.Fragment {
     @Override
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        unbinder = ButterKnife.bind(this, view);
+        mUnbinder = ButterKnife.bind(this, view);
     }
 
     @OnClick({R.id.tv_title_classic, R.id.tv_title_original,
@@ -81,7 +79,7 @@ public class CatalogFragment extends android.support.v4.app.Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        unbinder.unbind();
+        mUnbinder.unbind();
     }
 }
 

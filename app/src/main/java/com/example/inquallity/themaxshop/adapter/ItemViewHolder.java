@@ -18,12 +18,9 @@ import butterknife.ButterKnife;
 
 public class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-    @BindView(R.id.tv_item_name)
-    TextView mTitle;
-    @BindView(R.id.tv_item_price)
-    TextView mPrice;
-    @BindView(R.id.iv_item)
-    ImageView mImage;
+    @BindView(R.id.tv_item_name) TextView mTitle;
+    @BindView(R.id.tv_item_price) TextView mPrice;
+    @BindView(R.id.iv_item) ImageView mImage;
     private ItemsListAdapter.OnCardClickListener mListener;
     private Item mItem;
 

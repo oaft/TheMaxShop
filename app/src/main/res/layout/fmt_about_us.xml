@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackGround">
+    android:background="@drawable/background_about_us">
 
     <TextView
         android:layout_width="wrap_content"
@@ -15,10 +15,6 @@
         android:layout_margin="@dimen/dp_8"
         android:textSize="@dimen/sp_16"/>
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="@string/product_picture"
-        android:background="@drawable/back_about_shop"/>
+
 
 </LinearLayout>

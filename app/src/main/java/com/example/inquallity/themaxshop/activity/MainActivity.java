@@ -1,9 +1,9 @@
 package com.example.inquallity.themaxshop.activity;
 
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -17,16 +17,8 @@ import com.example.inquallity.themaxshop.fragment.AboutShopFragment;
 import com.example.inquallity.themaxshop.fragment.CatalogFragment;
 import com.example.inquallity.themaxshop.fragment.MainFragment;
 import com.example.inquallity.themaxshop.fragment.ShopsFragment;
-import com.example.inquallity.themaxshop.fragment.WeatherFragment;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 import butterknife.BindView;
-import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -51,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Fragment targetFragment;
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.mi_about_us:
                 targetFragment = new AboutShopFragment();
                 getSupportActionBar().setTitle(R.string.mi_about_shop);
@@ -64,10 +56,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 targetFragment = new ShopsFragment();
                 getSupportActionBar().setTitle(R.string.mi_our_shops);
                 break;
-            case R.id.mi_weather:
-                targetFragment = new WeatherFragment();
-                getSupportActionBar().setTitle(R.string.mi_weather);
-                break;
             case R.id.mi_main:
                 targetFragment = new MainFragment();
                 getSupportActionBar().setTitle(R.string.mi_main);
@@ -77,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
         }
 
-        if (targetFragment != null){
+        if (targetFragment != null) {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fl_content, targetFragment)
                     .commit();
@@ -94,8 +82,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mDrawerLayout = findViewById(R.id.drawer_layout_main_menu);
         mNavigationView = findViewById(R.id.navigation_view_main);
         mToolbar = findViewById(R.id.toolbar);
-
+        mToolbar.setTitle(R.string.mi_main);
         setSupportActionBar(mToolbar);
+
 
         mActionBarDrawerToggle = new ActionBarDrawerToggle(
                 this, mDrawerLayout, mToolbar,
