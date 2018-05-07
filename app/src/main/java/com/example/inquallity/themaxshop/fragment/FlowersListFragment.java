@@ -13,9 +13,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.inquallity.themaxshop.R;
-import com.example.inquallity.themaxshop.adapter.ItemsListAdapter;
+import com.example.inquallity.themaxshop.adapter.FlowersListAdapter;
 import com.example.inquallity.themaxshop.loader.AssetLoader;
-import com.example.inquallity.themaxshop.model.Item;
+import com.example.inquallity.themaxshop.model.FlowerItem;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -30,7 +30,7 @@ import butterknife.Unbinder;
  * Created by Olga Aleksandrova on 05-Feb-18.
  */
 
-public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCardClickListener {
+public class FlowersListFragment extends Fragment implements FlowersListAdapter.OnCardClickListener {
 
     private static SparseArray<String> sAssets = new SparseArray<>();
 
@@ -47,7 +47,7 @@ public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCa
 
     @BindView(R.id.rv_list_item) RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager mLayoutManager;
-    private ItemsListAdapter mItemsListAdapter;
+    private FlowersListAdapter mFlowersListAdapter;
     private Unbinder mUnbinder;
 
     @Nullable
@@ -64,19 +64,19 @@ public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCa
         final Bundle bundle = this.getArguments();
         int i = bundle.getInt("LIST_NUMBER");
 
-        final List<Item> items = loadFromAsset(i);
+        final List<FlowerItem> flowerItems = loadFromAsset(i);
 
-        mItemsListAdapter = new ItemsListAdapter(getActivity());
+        mFlowersListAdapter = new FlowersListAdapter(getActivity());
         mLayoutManager = new LinearLayoutManager(view.getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mItemsListAdapter.setOnCardClickListener(this);
-        mRecyclerView.setAdapter(mItemsListAdapter);
-        mItemsListAdapter.changeItems(items);
+        mFlowersListAdapter.setOnCardClickListener(this);
+        mRecyclerView.setAdapter(mFlowersListAdapter);
+        mFlowersListAdapter.changeItems(flowerItems);
     }
 
     @Override
     public void onCardClick(View view, String title, String imgUrl, String price) {
-        Fragment fragment = new ItemFragment();
+        Fragment fragment = new FlowerItemFragment();
         Bundle bundle = new Bundle();
         bundle.putString("KEY_TITLE", title);
         bundle.putString("KEY_IMG_RES", imgUrl);
@@ -103,10 +103,10 @@ public class ItemsListFragment extends Fragment implements ItemsListAdapter.OnCa
     }
 
     @NonNull
-    private List<Item> loadFromAsset(int position) {
+    private List<FlowerItem> loadFromAsset(int position) {
         final String json = new AssetLoader(getActivity()).readJson(sAssets.get(position));
         if (!TextUtils.isEmpty(json)) {
-            return new Gson().fromJson(json, new TypeToken<List<Item>>() {
+            return new Gson().fromJson(json, new TypeToken<List<FlowerItem>>() {
             }.getType());
         } else {
             return Collections.emptyList();

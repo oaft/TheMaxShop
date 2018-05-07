@@ -21,7 +21,7 @@ import butterknife.Unbinder;
  * Created by Olga Aleksandrova on 05-Feb-18.
  */
 
-public class ItemFragment extends Fragment {
+public class FlowerItemFragment extends Fragment {
 
     @BindView(R.id.iv_item_image) ImageView mItemImage;
     @BindView(R.id.tv_price_view) TextView mItemPrice;
@@ -40,9 +40,11 @@ public class ItemFragment extends Fragment {
 
         final String title = getArguments().getString("KEY_TITLE", getString(R.string.default_title));
         getActivity().setTitle(title);
-        mItemPrice.setText(getArguments().getString("KEY_PRICE", getString(R.string.not_exist_now)));
-        String path = getArguments().getString("KEY_IMG_RES");
 
+        final String price = getArguments().getString("KEY_PRICE", getString(R.string.not_exist_now));
+        mItemPrice.setText(price);
+
+        String path = getArguments().getString("KEY_IMG_RES");
         final AssetLoader al = new AssetLoader(getActivity());
         final Bitmap bmp = al.loadImage(path);
         mItemImage.setImageBitmap(bmp);

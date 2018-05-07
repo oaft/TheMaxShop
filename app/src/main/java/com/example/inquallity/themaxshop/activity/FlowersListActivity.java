@@ -8,7 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.example.inquallity.themaxshop.R;
-import com.example.inquallity.themaxshop.fragment.ItemsListFragment;
+import com.example.inquallity.themaxshop.fragment.FlowersListFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
  * @author Olga Aleksandrova on 03.02.2018.
  */
 
-public class ItemsListActivity extends AppCompatActivity {
+public class FlowersListActivity extends AppCompatActivity {
 
     @BindView(R.id.toolbar_list_item) Toolbar mToolbar;
 
@@ -47,7 +47,7 @@ public class ItemsListActivity extends AppCompatActivity {
         final Bundle extras = getIntent().getExtras();
         final Bundle extras2 = new Bundle();
         extras2.putInt("LIST_NUMBER", extras.getInt("LIST_NUMBER"));
-        Fragment fragment = new ItemsListFragment();
+        Fragment fragment = new FlowersListFragment();
         fragment.setArguments(extras2);
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fl_items_list_content, fragment)

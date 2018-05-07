@@ -8,7 +8,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -17,7 +16,7 @@ import com.example.inquallity.themaxshop.R;
 import com.example.inquallity.themaxshop.fragment.AboutShopFragment;
 import com.example.inquallity.themaxshop.fragment.CatalogFragment;
 import com.example.inquallity.themaxshop.fragment.MainFragment;
-import com.example.inquallity.themaxshop.fragment.ShopsFragment;
+import com.example.inquallity.themaxshop.fragment.ShopsListFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -56,7 +55,7 @@ public class  MainActivity extends AppCompatActivity implements NavigationView.O
                 getSupportActionBar().setTitle(R.string.mi_catalog);
                 break;
             case R.id.mi_shops:
-                targetFragment = new ShopsFragment();
+                targetFragment = new ShopsListFragment();
                 getSupportActionBar().setTitle(R.string.mi_our_shops);
                 break;
             case R.id.mi_main:

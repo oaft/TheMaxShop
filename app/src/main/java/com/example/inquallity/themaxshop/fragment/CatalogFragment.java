@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.inquallity.themaxshop.R;
-import com.example.inquallity.themaxshop.activity.ItemsListActivity;
+import com.example.inquallity.themaxshop.activity.FlowersListActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -70,7 +70,7 @@ public class  CatalogFragment extends android.support.v4.app.Fragment {
                 listNumber = 0;
                 break;
         }
-        Intent intent = new Intent(view.getContext(), ItemsListActivity.class);
+        Intent intent = new Intent(view.getContext(), FlowersListActivity.class);
         intent.putExtra("LIST_NUMBER", listNumber);
         intent.putExtra("TITLE", ((TextView) view).getText());
         startActivity(intent);

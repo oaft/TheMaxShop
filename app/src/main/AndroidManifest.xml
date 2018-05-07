@@ -20,7 +20,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.ItemsListActivity"/>
+        <activity android:name=".activity.FlowersListActivity"/>
+        <activity android:name=".activity.ShopMapActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
