@@ -2,6 +2,7 @@ package com.example.inquallity.themaxshop.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -46,7 +47,7 @@ public class ItemsListActivity extends AppCompatActivity {
         final Bundle extras = getIntent().getExtras();
         final Bundle extras2 = new Bundle();
         extras2.putInt("LIST_NUMBER", extras.getInt("LIST_NUMBER"));
-        android.support.v4.app.Fragment fragment = new ItemsListFragment();
+        Fragment fragment = new ItemsListFragment();
         fragment.setArguments(extras2);
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fl_items_list_content, fragment)

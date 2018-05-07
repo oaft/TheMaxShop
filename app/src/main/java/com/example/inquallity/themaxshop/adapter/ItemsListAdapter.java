@@ -44,35 +44,8 @@ public class ItemsListAdapter extends RecyclerView.Adapter<ItemViewHolder> {
         holder.setOnCardClickListener(mListener);
         final Item item = mItemList.get(position);
         holder.bindItem(item);
-
-
         Bitmap bitmap = mAssetLoader.loadImage(item.getImageUrl());
         holder.bindImage(bitmap);
-
-//        try {
-//            Bitmap bitmap = new AssetLoader().loadImage(item.getImageUrl(), mAssetManager);
-//            holder.bindImage(bitmap);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-
-
-//        InputStream is = null;
-//        try {
-//            is = mAssetManager.open(item.getImageUrl().trim());
-//            final Bitmap bitmap = BitmapFactory.decodeStream(is);
-//            holder.bindImage(bitmap);
-//        } catch (IOException e) {
-//            //log
-//        } finally {
-//            if (is != null){
-//                try {
-//                    is.close();
-//                } catch (IOException e) {
-//                    //log
-//                }
-//            }
-//        }
     }
 
     @Override

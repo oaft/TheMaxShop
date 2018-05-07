@@ -8,6 +8,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -19,12 +20,14 @@ import com.example.inquallity.themaxshop.fragment.MainFragment;
 import com.example.inquallity.themaxshop.fragment.ShopsFragment;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class  MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     @BindView(R.id.drawer_layout_main_menu) DrawerLayout mDrawerLayout;
     @BindView(R.id.navigation_view_main) NavigationView mNavigationView;
     @BindView(R.id.toolbar) Toolbar mToolbar;
+
     private ActionBarDrawerToggle mActionBarDrawerToggle;
     private long back_pressed;
 
@@ -79,12 +82,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ac_main);
 
-        mDrawerLayout = findViewById(R.id.drawer_layout_main_menu);
-        mNavigationView = findViewById(R.id.navigation_view_main);
-        mToolbar = findViewById(R.id.toolbar);
+        ButterKnife.bind(this);
+
         mToolbar.setTitle(R.string.mi_main);
         setSupportActionBar(mToolbar);
-
 
         mActionBarDrawerToggle = new ActionBarDrawerToggle(
                 this, mDrawerLayout, mToolbar,

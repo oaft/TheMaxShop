@@ -38,5 +38,6 @@
     <string name="not_exist_now">нет в наличии</string>
     <string name="mi_main">Главная</string>
     <string name="mi_list_goods">Список покупок</string>
+    <string name="default_title">TITLE NOT FOUND</string>
 
 </resources>

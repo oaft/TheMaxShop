@@ -23,7 +23,7 @@ import butterknife.Unbinder;
 
 public class MainFragment extends Fragment {
 
-    ArrayList<Integer> mPagesCollectionArrayList = new ArrayList(3);
+    private ArrayList<Integer> mPagesCollectionArrayList = new ArrayList(3);
 
     @BindView(R.id.view_pager_main) ViewPager mViewPager;
     private Unbinder mUnbinder;
@@ -39,9 +39,9 @@ public class MainFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         mUnbinder = ButterKnife.bind(this, view);
 
-        mPagesCollectionArrayList.add(R.drawable.pager_main_autor_bouquet_102);
-        mPagesCollectionArrayList.add(R.drawable.pager_main_tulpany_302);
-        mPagesCollectionArrayList.add(R.drawable.pager_main_roses_202);
+        mPagesCollectionArrayList.add(R.drawable.pager_main_autor_bouquet);
+        mPagesCollectionArrayList.add(R.drawable.pager_main_tulpany);
+        mPagesCollectionArrayList.add(R.drawable.pager_main_roses);
 
         AdvertisingPageAdapter advertisingPageAdapter = new AdvertisingPageAdapter(getActivity().getSupportFragmentManager());
         advertisingPageAdapter.setPagesCollection(mPagesCollectionArrayList);
